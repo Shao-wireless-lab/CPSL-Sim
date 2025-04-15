@@ -1,0 +1,56 @@
+{
+  "easy_80_60": {
+    "data_dir": "/home/ece213/CPSL-Sim_2/plume_data/G=1_80_60",
+    "target": {
+      "x": 80.0,
+      "y": 60.0,
+      "radius": 0.1
+    },
+    "y_range": [90, 74, -1]
+  },
+  "medium_80_60": {
+    "data_dir": "/home/ece213/CPSL-Sim_2/plume_data/G=3_80_60",
+    "target": {
+      "x": 80.0,
+      "y": 60.0,
+      "radius": 0.1
+    },
+    "y_range": [90, 74, -1]
+  },
+  "hard_80_60": {
+    "data_dir": "/home/ece213/CPSL-Sim_2/plume_data/G=5_80_60",
+    "target": {
+      "x": 80.0,
+      "y": 60.0,
+      "radius": 0.1
+    },
+    "y_range": [90, 74, -1]
+  },
+    "easy_60_120": {
+    "data_dir": "/home/ece213/CPSL-Sim_2/plume_data/G=1_60_120",
+    "target": {
+      "x": 60.0,
+      "y": 120.0,
+      "radius": 0.1
+    },
+      "y_range": [150, 134, -1]
+  },
+  "medium_60_120": {
+    "data_dir": "/home/ece213/CPSL-Sim_2/plume_data/G=3_60_120",
+    "target": {
+      "x": 60.0,
+      "y": 120.0,
+      "radius": 0.1
+    },
+    "y_range": [150, 134, -1]
+  },
+  "hard_60_120": {
+    "data_dir": "/home/ece213/CPSL-Sim_2/plume_data/G=5_60_120",
+    "target": {
+      "x": 60.0,
+      "y": 120.0,
+      "radius": 0.1
+    },
+    "y_range": [150, 134, -1]
+  }
+}

@@ -1,0 +1,57 @@
+Index: Generate_Plume_Data_Files/data_save.m
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>% Clear variables to reset for next dataset\nclear C_columns ws_columns C ws\n\n% Process DATA_Height_2\n% Extract every fourth column\nC_columns = DATA_Height_2(:, 4:4:end);\n\n% Extract the rest of the columns\nws_columns = DATA_Height_2;\nws_columns(:, 4:4:end) = [];\n\n% Save C_columns to a new .mat file\nC = C_columns; % Assign the extracted columns to a variable named \"C\"\nsave('Plume-C-Data-Height-2.mat', 'C');\n\n% Save ws_columns to a new .mat file\nws = ws_columns; % Assign the remaining columns to a variable named \"ws\"\nsave('Plume-Wind-Data-Height-2.mat', 'ws');\n\n% Clear variables to reset for next dataset\nclear C_columns ws_columns C ws\n\n% Process DATA_Height_5\n% Extract every fourth column\nC_columns = DATA_Height_5(:, 4:4:end);\n\n% Extract the rest of the columns\nws_columns = DATA_Height_5;\nws_columns(:, 4:4:end) = [];\n\n% Save C_columns to a new .mat file\nC = C_columns; % Assign the extracted columns to a variable named \"C\"\nsave('Plume-C-Data-Height-5.mat', 'C');\n\n% Save ws_columns to a new .mat file\nws = ws_columns; % Assign the remaining columns to a variable named \"ws\"\nsave('Plume-Wind-Data-Height-5.mat', 'ws');\n\n% Clear variables to reset for next dataset\nclear C_columns ws_columns C ws\n\ndisp('Files saved successfully.');\n
+===================================================================
+diff --git a/Generate_Plume_Data_Files/data_save.m b/Generate_Plume_Data_Files/data_save.m
+--- a/Generate_Plume_Data_Files/data_save.m	(revision 76d01d2660a53671a7694b96f2fbc478b7aa1ada)
++++ b/Generate_Plume_Data_Files/data_save.m	(date 1744668047818)
+@@ -1,3 +1,11 @@
++% Define the folder to save files
++save_folder = 'G=5_60_120';
++
++% Create the folder if it doesn't exist
++if ~exist(save_folder, 'dir')
++    mkdir(save_folder);
++end
++
+ % Clear variables to reset for next dataset
+ clear C_columns ws_columns C ws
+ 
+@@ -10,12 +18,12 @@
+ ws_columns(:, 4:4:end) = [];
+ 
+ % Save C_columns to a new .mat file
+-C = C_columns; % Assign the extracted columns to a variable named "C"
+-save('Plume-C-Data-Height-2.mat', 'C');
++C = C_columns;
++save(fullfile(save_folder, 'Plume-C-Data-Height-2.mat'), 'C');
+ 
+ % Save ws_columns to a new .mat file
+-ws = ws_columns; % Assign the remaining columns to a variable named "ws"
+-save('Plume-Wind-Data-Height-2.mat', 'ws');
++ws = ws_columns;
++save(fullfile(save_folder, 'Plume-Wind-Data-Height-2.mat'), 'ws');
+ 
+ % Clear variables to reset for next dataset
+ clear C_columns ws_columns C ws
+@@ -29,14 +37,14 @@
+ ws_columns(:, 4:4:end) = [];
+ 
+ % Save C_columns to a new .mat file
+-C = C_columns; % Assign the extracted columns to a variable named "C"
+-save('Plume-C-Data-Height-5.mat', 'C');
++C = C_columns;
++save(fullfile(save_folder, 'Plume-C-Data-Height-5.mat'), 'C');
+ 
+ % Save ws_columns to a new .mat file
+-ws = ws_columns; % Assign the remaining columns to a variable named "ws"
+-save('Plume-Wind-Data-Height-5.mat', 'ws');
++ws = ws_columns;
++save(fullfile(save_folder, 'Plume-Wind-Data-Height-5.mat'), 'ws');
+ 
+ % Clear variables to reset for next dataset
+ clear C_columns ws_columns C ws
+ 
+-disp('Files saved successfully.');
++disp('Files saved successfully into folder "ProcessedData".');

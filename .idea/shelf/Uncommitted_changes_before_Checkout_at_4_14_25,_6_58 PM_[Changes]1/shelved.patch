@@ -1,0 +1,289 @@
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Cooperative Sensing and Unmanned Aerial Vehicle Formation Control Optimization for Chemical Plume Source Localization (CPSL) Using Deep Reinforcement Learning\n\n![Multi-Agent Cooperative CPSL](images/Ch5-CPSL-Behavior.mp4)\n\nA Custom Gym Environment for Cooperative Sensing and Formation Control \n\n0. Very important note: Fix the ray file based on cuas code of Jean!!!!\nIssue with ray 1.13 and PyTorch 1.13: \nhttps://github.com/ray-project/ray/issues/26781\nhttps://github.com/ray-project/ray/issues/26557\n\nchange line 765 in torch_policy.py located at: `<your anaconda3 path>/envs/py3915/lib/python3.9/site-packages/ray/rllib/policy/torch_policy.py`\n\n\n```python \n    def set_state(self, state: dict) -> None:\n        # Set optimizer vars first.\n        optimizer_vars = state.get(\"_optimizer_variables\", None)\n        if optimizer_vars:\n            assert len(optimizer_vars) == len(self._optimizers)\n            for o, s in zip(self._optimizers, optimizer_vars):\n#start fix\n                for v in s[\"param_groups\"]:\n                    if \"foreach\" in v.keys():\n                        v[\"foreach\"] = False if v[\"foreach\"] is None else v[\"foreach\"]\n                for v in s[\"state\"].values():\n                    if \"momentum_buffer\" in v.keys():\n                        v[\"momentum_buffer\"] = False if v[\"momentum_buffer\"] is None else v[\"momentum_buffer\"]\n#end fix\n                optim_state_dict = convert_to_torch_tensor(s, device=self.device)\n                o.load_state_dict(optim_state_dict)\n        # Set exploration's state.\n        if hasattr(self, \"exploration\") and \"_exploration_state\" in state:\n            self.exploration.set_state(state=state[\"_exploration_state\"])\n        # Then the Policy's (NN) weights.\n        super().set_state(state)\n```\n\n1. Create and activate virtual environment in anaconda\n```bash\nconda create --cuas_env\n```\n\n2. Install tensorflow and other packages in <cuas_env-package-list.txt> file: \n```bash\nconda install tensorflow-gpu\n```\n\n3. To generate plume data (concentration and wind velocity measurements) --> see <example1_revised.m> file in Generate_Plume_Data_Files folder\n   \n4. To train model: \n```bash\npython run_experimentv2.py train \n```\nNote: see <parse_arguments()> function in <run_experimentv2.py> file for different training settings. \n\nNote: to store the training files in a specific directory, use: \n```bash\npython --log_dir <name of file path> run_experimentv2.py train\n```\nOtherwise, it will save to the <results> folder. \n\n5. To test model:\n```bash\npython run_experimentv2.py test --checkpoint <checkpoint>\n```\nNote: use the most recent generated checkpoint file to test the model \n\n6. To visualize the training results:\n   \n-- Install and activate the jupyterlab environment \n   ```bash\n   conda install conda-forge::jupyterlab\n   ```\n\n-- Install required packages from <jupyterenv-package-list.txt> file \n\n-- Open <Plume_Plot_Results.py> file \n\n-- To plot results, use: \n   ```bash \n   basedir = r'<training results folder path>'\n   ``` \n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+--- a/README.md	(revision 76d01d2660a53671a7694b96f2fbc478b7aa1ada)
++++ b/README.md	(date 1744678520933)
+@@ -4,7 +4,169 @@
+ 
+ A Custom Gym Environment for Cooperative Sensing and Formation Control 
+ 
+-0. Very important note: Fix the ray file based on cuas code of Jean!!!!
++## Data Generation
++### To generate plume data, follow these steps:
++
++### 1. Modify Parameters in the Plume Settings Script
++Edit the file  
++[`example_1_settings_revised.m`](./Generate_Plume_Data_Files/example_1_settings_revised.m)  
++to configure the **noise level** and **emitter location**.
++
++#### Change `a`, `b`, and `G` for different noise levels:
++```matlab
++% ff_params.abG = [0.005, 0.02, 1];
++ff_params.abG = [0.005, 0.02, 3];
++```
++#### Change emitter location:
++```matlab
++% plume_params(1,1).p0    = [80 60 0];   % set initial position 3 dim
++plume_params(1,1).p0    = [60 120 0];   % set initial position 3 dim
++```
++
++### 2. Run the Plume Generation Script
++
++Execute [`example1_revised.m`](./Generate_Plume_Data_Files/example1_revised.m)  
++to generate the plume data and store it in the MATLAB workspace.
++
++### 3. Understand the Data Format
++
++For each height level (e.g., **2m** or **5m**), the script generates a matrix of size:
++```
++600,000 × 4
++```
++
++Each **1,000 rows** represent one timestep. The columns are as follows:
++
++- **Columns 1–3:** wind vector components (u, v, w)
++- **Column 4:** concentration value at the grid point
++
++This can be conceptually reshaped into a 4D tensor of shape:
++```
++6000 × 100 × 100 × 4
++```
++
++Where:
++- **6000** timesteps  
++- **100 × 100** spatial grid  
++- **4** attributes per grid cell (3 for wind, 1 for concentration)
++
++---
++
++### 4. Save Data to Files
++
++Run [`data_save.m`](./Generate_Plume_Data_Files/data_save.m) to export the generated data:
++
++```matlab
++% Define the folder to save files
++save_folder = 'G=1_60_120';
++```
++
++Update the **save_folder path** to specify your desired local directory. 
++
++The script will save:
++- Wind data: 600,000 × 300 matrix
++- Concentration data: 600,000 × 100 matrix
++
++Both are saved in **.mat** format and ready for downstream use.
++
++# MARL Workflow
++
++Follow the steps below to set up the environment, generate data, train models, and visualize results for the MARL-based CPSL simulation.
++
++---
++
++### 1. Create and Activate a Virtual Environment
++
++Install required packages using either `pip` or `conda`:
++
++#### Using [`requirements.txt`](./requirements.txt) (pip):
++```bash
++python -m venv CPSL_env
++source CPSL_nv/bin/activate
++pip install -r requirements.txt
++```
++
++#### Using [`cuas_env-package-list.txt`](./cuas_env-package-list.txt) (conda):
++```bash
++conda create --name CPSL_env --file cuas_env-package-list.txt
++conda activate CPSL_env
++```
++
++### 2.Generate Plume Data
++Follow the instructions provided in the [Data Generation](#data-generation) section above.
++
++### 3.Important Note
++A certain error is very likely to occur due to the particular version of the Ray package used, 
++please refer to the last part [Ray Problem Fix](#Ray-Problem-Fix) of this document to fix it.
++
++
++### 4.Train the Model
++
++There are two training scripts available ([`run_experiment_v1.py`](./run_experiment_v1.py) 
++and [`run_experiment_v2.py`](./run_experiment_v2.py)). Both use the same training process.
++
++- Simulation configuration: [`sim_config.cfg`](./configs/sim_config.cfg)
++
++- Plume scenario configuration: [`plume_scenarios.json`](./configs/plume_scenarios.json)
++
++You can view and modify training settings by inspecting the `parse_arguments()` function in any **run_experiment.py**.
++
++#### Example training command:
++
++```bash
++python run_experiment_v1.py train --duration 15000
++```
++
++#### To specify a custom directory for saving training results:
++```bash
++python run_experiment_v1.py train --log_dir <path_to_output_directory>
++```
++
++If `--log_dir` is not specified, results will be saved to the default `results/` folder.
++
++###  5.Test the Model
++There are two testing scripts depending on your evaluation needs:
++
++To specify a custom directory for saving training results:
++
++- [`run_experiment_v1.py`](./run_experiment_v1.py)
++
++    Saves **per-timestep** episode data in `.json` format for detailed evaluation and visualization.
++
++- [`run_experiment_v2.py`](./run_experiment_v2.py)
++
++    Computes **summary statistics** across a specified number of test episodes.
++
++#### 6.Example test command:
++
++```bash
++python run_experiment_v1.py test --checkpoint <path_to_checkpoint> --max_num_episodes 10
++```
++
++#### Full example:
++```bash
++python run_experiment_v1.py test --checkpoint /home/ece213/CPSL-Sim_2/results/ppo/CPSL_2025-04-10-02-30/debug/MyTrainer_CPSL_0v0o5_095d4_00000_0_observation_type=local,custom_model=DeepsetModel_2025-04-10_02-30-19/checkpoint_000250/checkpoint-250 --max_num_episodes 100
++
++```
++> Make sure to use the most recent checkpoint file when testing.
++
++#### Important:
++In all `run_experiment` scripts, the environment is initialized using the `env_config` stored during training.
++To test with a different setup, you must manually override this configuration (see `lines 349–362`) in the script.
++
++
++### 5.Visualize Training and Testing Results
++#### For training visualization:
++Run [`plot_training.py`](./plot/plot_training.py)
++#### For testing/demo visualization:
++Run [`plot_demo.py`](./plot/plot_demo.py)
++
++These scripts will generate plots for performance tracking, qualitative analysis or animation of selected test episode.
++
++   
++# Ray Problem Fix
++Need to fix the ray file refer to the following solution.
++
+ Issue with ray 1.13 and PyTorch 1.13: 
+ https://github.com/ray-project/ray/issues/26781
+ https://github.com/ray-project/ray/issues/26557
+@@ -35,50 +197,3 @@
+         # Then the Policy's (NN) weights.
+         super().set_state(state)
+ ```
+-
+-1. Create and activate virtual environment in anaconda
+-```bash
+-conda create --cuas_env
+-```
+-
+-2. Install tensorflow and other packages in <cuas_env-package-list.txt> file: 
+-```bash
+-conda install tensorflow-gpu
+-```
+-
+-3. To generate plume data (concentration and wind velocity measurements) --> see <example1_revised.m> file in Generate_Plume_Data_Files folder
+-   
+-4. To train model: 
+-```bash
+-python run_experimentv2.py train 
+-```
+-Note: see <parse_arguments()> function in <run_experimentv2.py> file for different training settings. 
+-
+-Note: to store the training files in a specific directory, use: 
+-```bash
+-python --log_dir <name of file path> run_experimentv2.py train
+-```
+-Otherwise, it will save to the <results> folder. 
+-
+-5. To test model:
+-```bash
+-python run_experimentv2.py test --checkpoint <checkpoint>
+-```
+-Note: use the most recent generated checkpoint file to test the model 
+-
+-6. To visualize the training results:
+-   
+--- Install and activate the jupyterlab environment 
+-   ```bash
+-   conda install conda-forge::jupyterlab
+-   ```
+-
+--- Install required packages from <jupyterenv-package-list.txt> file 
+-
+--- Open <Plume_Plot_Results.py> file 
+-
+--- To plot results, use: 
+-   ```bash 
+-   basedir = r'<training results folder path>'
+-   ``` 
+-
+Index: Generate_Plume_Data_Files/example1_revised.m
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>%% Example 1\r\n% This script runs a MOABS/DT simulation where the plume location\r\n% is estimated via the particle filter. \r\n\r\nseed_value = randi(10000); % Random seed for variation (change manually for fixed results)\r\nrng(seed_value); % Set MATLAB's random seed\r\n\r\n% -- INITIALIZE SETTINGS AND ADD FOLDER PATHS\r\nclc, clear, close all  \r\naddpath Utility\r\naddpath Terrain\r\naddpath Classes\r\nexample_1_settings_revised\r\nPLOTRESULTS = 1;\r\nTERRAIN_ON = 0;\r\n\r\n% -- DATA STORED\r\nfn = 'telem_testing.csv';\r\n\r\n% -- INITIALIZE SIMULATION OBJECTS\r\nff = flowfieldClass(ff_params);\r\nplume = filamentClass(plume_params);\r\nplan = plannerClass(planner_params);\r\n\r\n% -- INITIALIZE VEHICLE / PLANNER OBJECTS\r\nveh = vehicleClass(vehicle_params);\r\nswarmnum = 10; temp = ones(swarmnum,1);\r\ntempx = linspace(-plan.w/2,plan.w/2,swarmnum)';\r\ntempz = 2*ones(swarmnum,1);\r\ntempy = 0*tempx;\r\np = plan.getPlaneGlobal([tempx,tempy,tempz],plan.r,plan.phi);\r\nclear tempx tempy tempz\r\nfor i=1:swarmnum\r\n    veh.p = p(i,:);    \r\n    veh = veh.setWaypoints(veh.p);\r\n    plan = plan.addVehicle(veh);\r\nend\r\n\r\n% -- initialize environment\r\nenv = environmentClass();\r\nenv = env.addFlowfield(ff); clear ff;\r\nenv = env.addPlume(plume); clear plume;\r\nenv = env.addPlanner(plan); clear plan;\r\n%if TERRAIN_ON\r\n%    env = env.addTerrain();\r\n%    env.terrain = env.terrain.clip2window(...\r\n%        [env.ff.xmin,env.ff.xmax,env.ff.ymin,env.ff.ymax]);\r\n%end\r\nenv.az = 30;\r\nenv.el = 30;\r\n\r\n% -- main loop settings \r\nn = simparams.N*env.Fs;\r\nmod_data = round(env.Fs/env.Fs_data);\r\n\r\ndataout = []; \r\nfillament_locs = cell(1,n); \r\n% \r\nDATA_Height_2 = zeros(100*n,100*4); \r\nDATA_Height_5 = zeros(100*n,100*4); \r\n\r\nF1 = []; \r\n\r\n\r\nX = [0 200 200 0]; \r\nY = [0 0 200 200]; \r\nZ = [2,5;2,5;2,5;2,5]; \r\n\r\n% -- MAIN LOOP \r\nfig1 = figure(1); \r\ntic \r\n%try     \r\nfor i=1:6000\r\n        % -- adjust CVT plane position\r\n        %if i == 200\r\n            %env.planner.rd = [40,50,5];\r\n            %env.planner.phid = 90;\r\n        %end\r\n\r\n        % -- step environment\r\n        env = env.step();\r\n\r\n        %DATA{i} = env.planner.dataout2; \r\n        DATA_Height_2(100*(i-1) + 1:100*i,:) = [cell2mat(env.planner.dataout2)]; \r\n        DATA_Height_5(100*(i-1) + 1:100*i,:) = [cell2mat(env.planner.dataout5)]; \r\n        fillament_locs{i} = env.fil_locs; \r\n        disp(i)\r\n        % -- record variables\r\n        % if mod(i,mod_data)\r\n        %     dataout = [dataout;...\r\n        %         env.planner.k*env.planner.dt,...\r\n        %         env.planner.Mdot,...\r\n        %         env.planner.P_hat...\r\n        %         ];\r\n        %     %fprintf(fileID,formatSpec,dataout);\r\n        %     %writematrix(dataout,fn,'WriteMode','append')\r\n        % end        \r\n        % if i == n\r\n        %     t_sim = toc;\r\n        %     writematrix(dataout,fn)\r\n        % end\r\n\r\n        % -- plot results\r\n        % if mod(i,env.Fs)==0 && PLOTRESULTS\r\n        %     subplot(1,3,1)\r\n        % \r\n        %     env.plotff(1)\r\n        %     %env.plotplume(1)\r\n        %     hold on; \r\n        %     scatter3(fillament_locs{i}(:,1),fillament_locs{i}(:,2),fillament_locs{i}(:,3),1000.*fillament_locs{i}(:,4),'r.')\r\n        %     %env.plotplanner(1)\r\n        %     %F{i} = env.getFrame(); % -- for saving to gif \r\n        %     hold on; \r\n        %     fill3(X,Y,Z(:,1),[0.7 0.7 0.7],'FaceAlpha',0.3)\r\n        %     hold on; \r\n        %     fill3(X,Y,Z(:,2),[0.7 0.7 0.7],'FaceAlpha',0.3)\r\n        %     grid on; \r\n        %     xlabel('X (m)')\r\n        %     ylabel('Y (m)')\r\n        %     zlabel('Z (m)')\r\n        %     set(gca,'FontName','Times','FontSize',12,'FontWeight','bold')\r\n        %     view(-37.5,30)\r\n        %     xlim([0 200])\r\n        %     ylim([0 200])\r\n        %     zlim([0 25])\r\n        % \r\n        %     subplot(1,3,2)\r\n        %     env.plotff(1)\r\n        %     %env.plotplume(1)\r\n        %     hold on; \r\n        %     scatter3(fillament_locs{i}(:,1),fillament_locs{i}(:,2),fillament_locs{i}(:,3),1000.*fillament_locs{i}(:,4),'r.')\r\n        %     hold on; \r\n        %     fill3(X,Y,Z(:,1),[0.7 0.7 0.7],'FaceAlpha',0.3)\r\n        %     hold on; \r\n        %     fill3(X,Y,Z(:,2),[0.7 0.7 0.7],'FaceAlpha',0.3)\r\n        %     grid on; \r\n        %     xlabel('$X$ (m)','Interpreter','latex')\r\n        %     ylabel('$Y$ (m)','Interpreter','latex')\r\n        %     zlabel('$Z$ (m)','Interpreter','latex')\r\n        %     set(gca,'FontName','Times','FontSize',12,'FontWeight','bold')\r\n        %     view(0,0)\r\n        %     xlim([0 200])\r\n        %     ylim([0 200])\r\n        %     zlim([0 25])\r\n        % \r\n        %     subplot(1,3,3)\r\n        % \r\n        %     % close all; \r\n        %     % figure(2)\r\n        %     % i = 5900; \r\n        %     env.plotff(1)\r\n        %     %env.plotplume(1)\r\n        %     hold on; \r\n        %     scatter3(fillament_locs{i}(:,1),fillament_locs{i}(:,2),fillament_locs{i}(:,3),1000.*fillament_locs{i}(:,4),'r.')\r\n        %     hold on; \r\n        %     %fill3(X,Y,Z(:,1),'r','FaceAlpha',0.3)\r\n        %     hold on; \r\n        %     %fill3(X,Y,Z(:,2),'r','FaceAlpha',0.3)\r\n        %     grid on; \r\n        %     xlabel('$X$ (m)','Interpreter','latex')\r\n        %     ylabel('$Y$ (m)','Interpreter','latex')\r\n        %     %zlabel('$Z$ (m)','Interpreter','latex')\r\n        %     set(gca,'FontName','Times','FontSize',12,'FontWeight','bold')\r\n        %     view(0,90)\r\n        %     xlim([0 200])\r\n        %     ylim([0 200])\r\n        %     zlim([0 25])\r\n        % \r\n        %     shg\r\n        %     F1 = [F1; getframe(fig1)];\r\n        %     hold off; \r\n        %     clf\r\n        % end\r\n        \r\n    \r\nend\r\n%catch\r\nF1 = [F1; getframe(gcf)];\r\n\r\n% create the video writer with 1 fps\r\nwriterObj = VideoWriter('Plume-Animation-With-Meander.mp4');\r\nwriterObj.FrameRate = 10;\r\n% set the seconds per image\r\n% open the video writer\r\nopen(writerObj);\r\n% write the frames to the video\r\nfor i=1:length(F1)\r\n% convert the image to a frame\r\nframe = F1(i) ;    \r\nwriteVideo(writerObj, frame);\r\nend\r\n% close the writer object\r\nclose(writerObj);\r\n\r\n%%\r\nclose all; \r\nfigure(4)\r\nind = 2560;\r\nfor ind = 3200\r\n    scatter3(fillament_locs{ind}(:,1),fillament_locs{ind}(:,2),fillament_locs{ind}(:,3),1000.*fillament_locs{ind}(:,4),'r.')\r\n    view(0,90)\r\n    pause(0.1)\r\nend\r\n%env.plotff(1)\r\nhold on; \r\nscatter3(80,60,5,150,'g.')\r\nview(0,90)\r\nxlabel('$X$ (m)','Interpreter','latex')\r\nylabel('$Y$ (m)','Interpreter','latex')\r\nzlabel('$Z$ (m)','Interpreter','latex')\r\nset(gca,'FontName','Times','FontSize',12,'FontWeight','bold')\r\n\r\n\r\n%end\r\n% t_end = toc;\r\n% t_rate = simparams.N/t_sim;\r\n% t_rateToEnd = simparams.N/t_end;\r\n\r\n\r\n\r\n\r\n% %% Process data\r\n% datain = importdata('telem_testing.csv',',');\r\n% t = datain(:,1);\r\n% mdot = datain(:,2);\r\n% thet = datain(:,3:7);\r\n% \r\n% % figure(2)\r\n% % plot(t,mdot, t, movmean(mdot,1500))\r\n% % \r\n% % ylim([0,30])\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Generate_Plume_Data_Files/example1_revised.m b/Generate_Plume_Data_Files/example1_revised.m
+--- a/Generate_Plume_Data_Files/example1_revised.m	(revision 76d01d2660a53671a7694b96f2fbc478b7aa1ada)
++++ b/Generate_Plume_Data_Files/example1_revised.m	(date 1744668049045)
+@@ -2,9 +2,6 @@
+ % This script runs a MOABS/DT simulation where the plume location
+ % is estimated via the particle filter. 
+ 
+-seed_value = randi(10000); % Random seed for variation (change manually for fixed results)
+-rng(seed_value); % Set MATLAB's random seed
+-
+ % -- INITIALIZE SETTINGS AND ADD FOLDER PATHS
+ clc, clear, close all  
+ addpath Utility
+@@ -228,4 +225,4 @@
+ % % figure(2)
+ % % plot(t,mdot, t, movmean(mdot,1500))
+ % % 
+-% % ylim([0,30])
++% % ylim([0,30])
+\ No newline at end of file
+Index: Generate_Plume_Data_Files/example_1_settings_revised.m
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>% -- set simulation params  \r\nsimparams.N = 300; \r\nsimparams.modnum = 20;\r\n\r\n% -- create param structs for initialization\r\nff_params               = struct;\r\nff_params.dim           = 3;\r\nff_params.uv0           = [1,0];\r\nff_params.abG           = [0.005,0.02,1];\r\n% ff_params.abG           = [0,0,0];\r\n%ff_params.uv0           = [1,-1];\r\n%ff_params.abG           = [0.5,0.1,3];\r\n%ff_params.uv0           = [1,0.5];\r\n%ff_params.abG           = [0.4,0.4,5];\r\n%ff_params.alpha          = 0.3;\r\n\r\nff_params.Fs = 20; \r\n\r\nplume_params            = struct;\r\nplume_params(1,1).p0    = [80 60 0];   % set initial position 3 dim\r\nplume_params(1,1).Collisions = 'False';\r\nplume_params.Fs = 20; \r\n\r\nplanner_params          = struct;\r\nplanner_params.NavStrategy = 'CVT';\r\nplanner_params.QuantStrategy = 'Mod-NGI';\r\nplanner_params.r        = [40,50,2];\r\nplanner_params.rd       = [40,50,2];\r\nplanner_params.w        = 30;\r\nplanner_params.h        = 10; \r\nplanner_params.phi      = 90;\r\nplanner_params.phid     = 90;\r\n\r\nvehicle_params.QuantifyFlag = 1; \r\n\r\nplanner_params.delx = 2; \r\nplanner_params.dely = 2; \r\n%planner_params.delz = 2/1.5; \r\n\r\n%planner_params.dataout2 = zeros(200/planner_params.delx,200/planner_params.dely,20/planner_params.delz,simparams.N * ff_params.Fs,2);\r\n%planner_params.dataout2 = zeros(200/planner_params.delx,200/planner_params.dely,20/planner_params.delz,simparams.N * ff_params.Fs,2);\r\nplanner_params.xvals = planner_params.delx/2:planner_params.delx:200; \r\nplanner_params.yvals = planner_params.dely/2:planner_params.dely:200;\r\n%planner_params.zvals = planner_params.delz/2:planner_params.delz:20; \r\nplanner_params.zvals = [2,5]; \r\n\r\nvehicle_params          = struct;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Generate_Plume_Data_Files/example_1_settings_revised.m b/Generate_Plume_Data_Files/example_1_settings_revised.m
+--- a/Generate_Plume_Data_Files/example_1_settings_revised.m	(revision 76d01d2660a53671a7694b96f2fbc478b7aa1ada)
++++ b/Generate_Plume_Data_Files/example_1_settings_revised.m	(date 1744668046212)
+@@ -6,7 +6,8 @@
+ ff_params               = struct;
+ ff_params.dim           = 3;
+ ff_params.uv0           = [1,0];
+-ff_params.abG           = [0.005,0.02,1];
++% ff_params.abG           = [0.005,0.02,1];
++ff_params.abG           = [0.005,0.02,5];
+ % ff_params.abG           = [0,0,0];
+ %ff_params.uv0           = [1,-1];
+ %ff_params.abG           = [0.5,0.1,3];
+@@ -17,7 +18,8 @@
+ ff_params.Fs = 20; 
+ 
+ plume_params            = struct;
+-plume_params(1,1).p0    = [80 60 0];   % set initial position 3 dim
++% plume_params(1,1).p0    = [80 60 0];   % set initial position 3 dim
++plume_params(1,1).p0    = [60 120 0];   % set initial position 3 dim
+ plume_params(1,1).Collisions = 'False';
+ plume_params.Fs = 20; 
+ 
