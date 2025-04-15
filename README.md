@@ -1,8 +1,9 @@
 # Cooperative Sensing and Unmanned Aerial Vehicle Formation Control Optimization for Chemical Plume Source Localization (CPSL) Using Deep Reinforcement Learning
 
-![Multi-Agent Cooperative CPSL](images/Ch5-CPSL-Behavior.mp4)
+### Check animation demo here
+[Watch Multi-Agent Cooperative CPSL Demo](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
 
-A Custom Gym Environment for Cooperative Sensing and Formation Control 
+### A Custom Gym Environment for Cooperative Sensing and Formation Control 
 
 ## Data Generation
 ### To generate plume data, follow these steps:
@@ -50,8 +51,6 @@ Where:
 - **100 × 100** spatial grid  
 - **4** attributes per grid cell (3 for wind, 1 for concentration)
 
----
-
 ### 4. Save Data to Files
 
 Run [`data_save.m`](./Generate_Plume_Data_Files/data_save.m) to export the generated data:
@@ -69,6 +68,7 @@ The script will save:
 
 Both are saved in **.mat** format and ready for downstream use.
 
+---
 # MARL Workflow
 
 Follow the steps below to set up the environment, generate data, train models, and visualize results for the MARL-based CPSL simulation.
@@ -155,7 +155,7 @@ In all `run_experiment` scripts, the environment is initialized using the `env_c
 To test with a different setup, you must manually override this configuration (see `lines 349–362`) in the script.
 
 
-### 5.Visualize Training and Testing Results
+### 7.Visualize Training and Testing Results
 #### For training visualization:
 Run [`plot_training.py`](./plot/plot_training.py)
 #### For testing/demo visualization:
@@ -163,7 +163,7 @@ Run [`plot_demo.py`](./plot/plot_demo.py)
 
 These scripts will generate plots for performance tracking, qualitative analysis or animation of selected test episode.
 
-   
+--- 
 # Ray Problem Fix
 Need to fix the ray file refer to the following solution.
 
