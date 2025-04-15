@@ -5,6 +5,7 @@
 
 ### A Custom Gym Environment for Cooperative Sensing and Formation Control 
 
+---
 ## Data Generation
 ### To generate plume data, follow these steps:
 
