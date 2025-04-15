@@ -6,10 +6,10 @@ class Config(dict):
 
     MARKER = object()
 
-    def __new__(cls, value):
+    def __new__(cls, *args, **kwargs):
         """Makes the class a singleton"""
         if not hasattr(cls, "instance"):
-            cls.instance = super(Config, cls).__new__(cls, value)
+            cls.instance = super(Config, cls).__new__(cls)  # Do not pass `value` here
         return cls.instance
 
     def __init__(self, value=None):

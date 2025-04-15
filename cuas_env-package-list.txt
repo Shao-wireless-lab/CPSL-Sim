@@ -1,6 +1,4 @@
-# This file may be used to create an environment using:
-# $ conda create --name <env> --file <this file>
-# platform: win-64
+conda
 _anaconda_depends=2021.11=py39_0
 _ipyw_jlab_nb_ext_conf=0.1.0=py39haa95532_0
 _tflow_select=2.1.0=gpu

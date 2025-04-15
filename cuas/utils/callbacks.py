@@ -31,11 +31,17 @@ class TrainCallback(DefaultCallbacks):
 
         episode.user_data["target_found"] = []
         episode.user_data["final_cent_dist_to_emitter"] = []
+        episode.user_data["final_cent_dist_to_emitter_offset"] = []
+
         episode.user_data["time_tfinal"] = []
 
         episode.user_data["current_cent_dist_to_emitter"] = []
 
         episode.user_data["drop_found"] = []
+
+        episode.user_data["centroid_stable"] = []
+        episode.user_data["detection"] = []
+
         episode.user_data["time_tdrop"] = []
         episode.user_data["at_drop_cent_dist_to_emitter"] = []
 
@@ -50,6 +56,7 @@ class TrainCallback(DefaultCallbacks):
         episode.user_data["R_task"] = []
         episode.user_data["R_plume"] = []
         episode.user_data["R_upwind"] = []
+        episode.user_data["R_time"] = []
         episode.user_data["R_col"] = []
         episode.user_data["R_d"] = []
         episode.user_data["R_theta"] = []
@@ -58,6 +65,7 @@ class TrainCallback(DefaultCallbacks):
                         
         episode.user_data["agent_collisions"] = []
         episode.user_data["obstacle_collisions"] = []
+        episode.user_data["sum_flux"] = []
 
     def on_episode_step(
         self,
@@ -78,12 +86,17 @@ class TrainCallback(DefaultCallbacks):
         
         target_found = []
         final_cent_dist_to_emitter = []
+        final_cent_dist_to_emitter_offset = []
         time_tfinal = []
 
         current_cent_dist_to_emitter = []
 
         drop_found = []
         time_tdrop = []
+
+        centroid_stable = []
+        detection = []
+
         at_drop_cent_dist_to_emitter = []
         
         avg_agent_to_cent_dist = []
@@ -96,6 +109,7 @@ class TrainCallback(DefaultCallbacks):
         
         cum_R_task = 0
         cum_R_upwind = 0
+        cum_R_time = 0
         cum_R_plume = 0
         cum_R_col = 0
         cum_R_d = 0
@@ -106,16 +120,24 @@ class TrainCallback(DefaultCallbacks):
         cum_agent_collisions = 0
         cum_obstacle_collisions = 0
 
+        sum_flux = []
+
         for agent_id in agent_ids:
             last_info = episode.last_info_for(agent_id)
 
             target_found.append(last_info["target_found"])
             final_cent_dist_to_emitter.append(last_info["final_cent_dist_to_emitter"])
+            final_cent_dist_to_emitter_offset.append(last_info["final_cent_dist_to_emitter_offset"])
+
             time_tfinal.append(last_info["time_tfinal"])
 
             current_cent_dist_to_emitter.append(last_info["current_cent_dist_to_emitter"])
 
             drop_found.append(last_info["drop_found"])
+
+            centroid_stable.append(last_info["centroid_stable"])
+            detection.append(last_info["detection"])
+
             time_tdrop.append(last_info["time_tdrop"])
             at_drop_cent_dist_to_emitter.append(last_info["at_drop_cent_dist_to_emitter"])
             
@@ -130,6 +152,7 @@ class TrainCallback(DefaultCallbacks):
             cum_R_task += last_info["R_task"]
             cum_R_plume += last_info["R_plume"]
             cum_R_upwind += last_info["R_upwind"]
+            cum_R_time += last_info["R_time"]
             cum_R_col += last_info["R_col"]
             cum_R_d += last_info["R_d"]
             cum_R_theta += last_info["R_theta"]
@@ -139,13 +162,21 @@ class TrainCallback(DefaultCallbacks):
             cum_agent_collisions += last_info["agent_collision"]
             cum_obstacle_collisions += last_info["obstacle_collision"]
 
+            sum_flux.append(last_info["sum_flux"])
+
         target_found = max(target_found)
         final_cent_dist_to_emitter = max(final_cent_dist_to_emitter)
+        final_cent_dist_to_emitter_offset = max(final_cent_dist_to_emitter_offset)
+
         time_tfinal = max(time_tfinal)
 
         current_cent_dist_to_emitter = max(current_cent_dist_to_emitter)
 
         drop_found = max(drop_found)
+
+        centroid_stable = max(centroid_stable)
+        detection = max(detection)
+
         time_tdrop = max(time_tdrop)
         at_drop_cent_dist_to_emitter = max(at_drop_cent_dist_to_emitter)
 
@@ -157,13 +188,20 @@ class TrainCallback(DefaultCallbacks):
 
         avg_UAV2emitter = max(avg_UAV2emitter)
 
+        sum_flux = max(sum_flux)
+
         episode.user_data["target_found"].append(target_found)
         episode.user_data["final_cent_dist_to_emitter"].append(final_cent_dist_to_emitter)
+        episode.user_data["final_cent_dist_to_emitter_offset"].append(final_cent_dist_to_emitter_offset)
         episode.user_data["time_tfinal"].append(time_tfinal)
 
         episode.user_data["current_cent_dist_to_emitter"].append(current_cent_dist_to_emitter)
 
         episode.user_data["drop_found"].append(drop_found)
+
+        episode.user_data["centroid_stable"].append(centroid_stable)
+        episode.user_data["detection"].append(detection)
+
         episode.user_data["time_tdrop"].append(time_tdrop)
         episode.user_data["at_drop_cent_dist_to_emitter"].append(at_drop_cent_dist_to_emitter)
 
@@ -178,6 +216,7 @@ class TrainCallback(DefaultCallbacks):
         episode.user_data["R_task"].append(cum_R_task)
         episode.user_data["R_plume"].append(cum_R_plume)
         episode.user_data["R_upwind"].append(cum_R_upwind)
+        episode.user_data["R_time"].append(cum_R_time)
         episode.user_data["R_col"].append(cum_R_col)
         episode.user_data["R_d"].append(cum_R_d)
         episode.user_data["R_theta"].append(cum_R_theta)
@@ -186,6 +225,8 @@ class TrainCallback(DefaultCallbacks):
 
         episode.user_data["agent_collisions"].append(cum_agent_collisions)
         episode.user_data["obstacle_collisions"].append(cum_obstacle_collisions)
+
+        episode.user_data["sum_flux"].append(sum_flux)
 
     def on_episode_end(
         self,
@@ -221,6 +262,10 @@ class TrainCallback(DefaultCallbacks):
         episode.custom_metrics["target_found"] = target_found
         final_cent_dist_to_emitter = np.max(episode.user_data["final_cent_dist_to_emitter"])
         episode.custom_metrics["final_cent_dist_to_emitter"] = final_cent_dist_to_emitter
+
+        final_cent_dist_to_emitter_offset = np.max(episode.user_data["final_cent_dist_to_emitter_offset"])
+        episode.custom_metrics["final_cent_dist_to_emitter_offset"] = final_cent_dist_to_emitter_offset
+
         time_tfinal = np.max(episode.user_data["time_tfinal"])
         episode.custom_metrics["time_tfinal"] = time_tfinal
 
@@ -229,6 +274,14 @@ class TrainCallback(DefaultCallbacks):
 
         drop_found = np.max(episode.user_data["drop_found"])
         episode.custom_metrics["drop_found"] = drop_found
+
+        centroid_stable = np.max(episode.user_data["centroid_stable"])
+        episode.custom_metrics["centroid_stable"] = centroid_stable
+
+        detection = np.max(episode.user_data["detection"])
+        episode.custom_metrics["detection"] = detection
+
+
         time_tdrop = np.max(episode.user_data["time_tdrop"])
         episode.custom_metrics["time_tdrop"] = time_tdrop 
         at_drop_cent_dist_to_emitter = np.max(episode.user_data["at_drop_cent_dist_to_emitter"])
@@ -252,6 +305,8 @@ class TrainCallback(DefaultCallbacks):
         episode.custom_metrics["R_plume"] = R_plume
         R_upwind = np.sum(episode.user_data["R_upwind"])
         episode.custom_metrics["R_upwind"] = R_upwind
+        R_time = np.sum(episode.user_data["R_time"])
+        episode.custom_metrics["R_time"] = R_time
         R_col = np.sum(episode.user_data["R_col"])
         episode.custom_metrics["R_col"] = R_col
         R_d = np.sum(episode.user_data["R_d"])
@@ -267,6 +322,8 @@ class TrainCallback(DefaultCallbacks):
         obstacle_collisions = np.sum(episode.user_data["obstacle_collisions"])
         episode.custom_metrics["obstacle_collisions"] = obstacle_collisions
 
+        sum_flux = np.max(episode.user_data["sum_flux"])
+        episode.custom_metrics["sum_flux"] = sum_flux
 
 
     # def on_sample_end(self, *, worker: RolloutWorker, samples: SampleBatch, **kwargs):
