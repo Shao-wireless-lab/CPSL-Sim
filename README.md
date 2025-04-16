@@ -210,11 +210,10 @@ where hyperparameters are chosen for simplicity to be the same as those found in
 
 ## Fluxotaxis control vector
 The decentralized scheme involves calculating the $i$-th agent's relative flux between the $j$-th neighboring agents given by Spears et. al., that is, 
-$$\mathbf{GDMF}_i \approx F_{ij} = \rho_j |\mathbf{V}_j|\cos{\theta_r}=\rho_j\frac{\mathbf{r}_{ij}}{|\mathbf{r}_{ij}|}\cdot\mathbf{V}_j.$$
-The angle between $\mathbf{V}_j$ and separation vector, $\mathbf{r}_{ij}$, is given by $\theta_r$. The update rule for the fluxotaxis algorithm becomes, 
-$$\frac{d\mathbf{v}_i}{dt} = \mathbf{n}_F+\mathbf{n}_{ij},$$
+$$GDMF_i \approx F_{ij} = \rho_j |\mathbf{V}_j|\cos{\theta_r}=\rho_j\frac{r_{ij}}{|r_{ij}|}\cdot\V_j.$$
+The angle between $V_j$ and separation vector, $r_{ij}$, is given by $\theta_r$. The update rule for the fluxotaxis algorithm becomes, 
+$$\frac{dv_i}{dt} = n_F+n_{ij},$$
 $$F^*_{ij}=\begin{cases}\underset{\forall j\in\Omega}{\arg\,\text{min}}~F_{ij},\quad \text{if}~\exists (F_{ij}<0) \\
-\underset{\forall j\in\Omega}{\arg\,\text{max}}~F_{ij},\quad \text{else},
-\end{cases}$$
-where $\mathbf{v}_i$ is the velocity vector control of the $i$-th agent, and $\mathbf{n}_{ij}=\mathbf{r}_{ij}/|\mathbf{r}_{ij}|$ points in the direction of $F^*_{ij}$. If no agents are around or no agent detects a concentration, $\mathbf{n}_{ij}\rightarrow0$. 
+\underset{\forall j\in\Omega}{\arg\,\text{max}}~F_{ij},\quad \text{else},\end{cases}$$
+where $v_i$ is the velocity vector control of the $i$-th agent, and $n_{ij}=r_{ij}/|r_{ij}|$ points in the direction of $F^*_{ij}$. If no agents are around or no agent detects a concentration, $n_{ij}\rightarrow 0$. 
 When no flux is detected, other strategies can be deferred to. The secondary source seeking strategies we consider are: chemotaxis, anemotaxis, and casting. In this example, chemotaxis is chosen to help keep the agents near the plume.
