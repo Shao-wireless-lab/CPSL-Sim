@@ -198,3 +198,12 @@ change line 765 in torch_policy.py located at: `<your anaconda3 path>/envs/py391
         # Then the Policy's (NN) weights.
         super().set_state(state)
 ```
+# Fluxotaxis implementation
+To test the effectiveness of the CPSL DRL algorithm, a three agent version of the Fluxotaxis algorithm was implemented. The algorithm is based on the Large Swarm Implementation version (see Section 9.4.5 in Physicomimetics book by Spears). The algorithm is broken down into two major steps: computation of the formation control vector, and the computation of the Fluxotaxis control vector.
+
+## Formation control vector
+The formation control vector is computed based on the Lennard-Jones potential function,
+
+with parameters set to...
+
+The desired control position is set by the parameter $D$ and the resulting formation control vector is given by $F$
