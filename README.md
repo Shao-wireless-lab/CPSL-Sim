@@ -203,7 +203,9 @@ To test the effectiveness of the CPSL DRL algorithm, a three agent version of th
 
 ## Formation control vector
 To control the formation of the agents and provide a way for seamless obstacle avoidance, a generalized version of the Lennard-Jones potential is used to generate a formation control vector,
-\[F_{formation} = \mathbf{n}_F = c_1\frac{F(D)^{c_3}}{r^{c_5}} - c_2\frac{F(D)^{c_4}}{r^{c_6}},\]
+$$
+F_{formation} = {n_F} = {c_1\frac{F(D)^{c_3}}{r^{c_5}} - c_2\frac{F(D)^{c_4}}{r^{c_6}},}
+$$
 $$\mathcal{F}(D)=(\frac{c_1D^{c_6-c_5}}{c_2})^{\frac{1}{c_4-c_3}},$$
 where hyperparameters are chosen for simplicity to be the same as those found in Spears et. al. ($c_1=c_2=c_3=1$, $c_4=c_5=2$, and $c_6=3$), such that $F_{formation} = \mathbf{n}_F = \mathcal{F}(D)/r^2 - \mathcal{F}(D)^2/r^3$ and $\mathcal{F}(D)=D^{1/2}$. The variable $D$ represents the desired separation distance between the agents, which was set to 5m.
 
