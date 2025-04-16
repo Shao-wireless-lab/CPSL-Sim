@@ -202,8 +202,30 @@ change line 765 in torch_policy.py located at: `<your anaconda3 path>/envs/py391
 To test the effectiveness of the CPSL DRL algorithm, a three agent version of the Fluxotaxis algorithm was implemented. The algorithm is based on the Large Swarm Implementation version (see Section 9.4.5 in Physicomimetics book by Spears). The algorithm is broken down into two major steps: computation of the formation control vector, and the computation of the Fluxotaxis control vector.
 
 ## Formation control vector
-The formation control vector is computed based on the Lennard-Jones potential function,
+To control the formation of the agents and provide a way for seamless obstacle avoidance, a generalized version of the Lennard-Jones potential is used to generate a formation control vector,
+$$
+    F_{formation} = \mathbf{n}_F = c_1\frac{\mathcal{F}(D)^{c_3}}{r^{c_5}} - c_2\frac{\mathcal{F}(D)^{c_4}}{r^{c_6}},
+$$
+$$
+    \mathcal{F}(D)=(\frac{c_1D^{c_6-c_5}}{c_2})^{\frac{1}{c_4-c_3}},
+$$
+where hyperparameters are chosen for simplicity to be the same as those found in Spears et. al. ($c_1=c_2=c_3=1$, $c_4=c_5=2$, and $c_6=3$), such that $F_{formation} = \mathbf{n}_F = \mathcal{F}(D)/r^2 - \mathcal{F}(D)^2/r^3$ and $\mathcal{F}(D)=D^{1/2}$. The variable $D$ represents the desired separation distance between the agents, which was set to 5m.
 
-with parameters set to...
-
-The desired control position is set by the parameter $D$ and the resulting formation control vector is given by $F$
+## Fluxotaxis control vector
+The decentralized scheme involves calculating the $i$-th agent's relative flux between the $j$-th neighboring agents given by Spears et. al., that is, 
+$$
+    \mathbf{GDMF}_i \approx F_{ij} = \rho_j |\mathbf{V}_j|\cos{\theta_r}=\rho_j\frac{\mathbf{r}_{ij}}{|\mathbf{r}_{ij}|}\cdot\mathbf{V}_j.
+$$
+The angle between $\mathbf{V}_j$ and separation vector, $\mathbf{r}_{ij}$, is given by $\theta_r$. The update rule for the fluxotaxis algorithm becomes, 
+$$
+    \frac{d\mathbf{v}_i}{dt} = \mathbf{n}_F+\mathbf{n}_{ij},
+$$
+$$
+F^*_{ij}=
+    \begin{cases}
+    \underset{\forall j\in\Omega}{\arg\,\text{min}}~F_{ij},\quad \text{if}~\exists (F_{ij}<0) \\
+    \underset{\forall j\in\Omega}{\arg\,\text{max}}~F_{ij},\quad \text{else},
+    \end{cases}
+$$
+where $\mathbf{v}_i$ is the velocity vector control of the $i$-th agent, and $\mathbf{n}_{ij}=\mathbf{r}_{ij}/|\mathbf{r}_{ij}|$ points in the direction of $F^*_{ij}$. If no agents are around or no agent detects a concentration, $\mathbf{n}_{ij}\rightarrow0$. 
+When no flux is detected, other strategies can be deferred to. The secondary source seeking strategies we consider are: chemotaxis, anemotaxis, and casting. In this example, chemotaxis is chosen to help keep the agents near the plume.
