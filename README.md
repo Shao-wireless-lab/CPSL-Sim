@@ -210,7 +210,7 @@ where hyperparameters are chosen for simplicity to be the same as those found in
 
 ## Fluxotaxis control vector
 The decentralized scheme involves calculating the $i$-th agent's relative flux between the $j$-th neighboring agents given by Spears et. al., that is, 
-$$GDMF_i \approx F_{ij} = \rho_j |\mathbf{V}_j|\cos{\theta_r}=\rho_j\frac{r_{ij}}{|r_{ij}|}\cdot\V_j.$$
+$$GDMF_i \approx F_{ij} = \rho_j |V_j|\cos{\theta_r}=\rho_j\frac{r_{ij}}{|r_{ij}|}\cdot\V_j.$$
 The angle between $V_j$ and separation vector, $r_{ij}$, is given by $\theta_r$. The update rule for the fluxotaxis algorithm becomes, 
 $$\frac{dv_i}{dt} = n_F+n_{ij},$$
 $$F^*_{ij}=\begin{cases}\underset{\forall j\in\Omega}{\arg\,\text{min}}~F_{ij},\quad \text{if}~\exists (F_{ij}<0) \\
