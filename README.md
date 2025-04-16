@@ -199,7 +199,7 @@ change line 765 in torch_policy.py located at: `<your anaconda3 path>/envs/py391
         super().set_state(state)
 ```
 # Fluxotaxis implementation
-To test the effectiveness of the CPSL DRL algorithm, a three agent version of the Fluxotaxis algorithm was implemented. The algorithm is based on the Large Swarm Implementation version (see Section 9.4.5 in Physicomimetics book by Spears). The algorithm is broken down into two major steps: computation of the formation control vector, and the computation of the Fluxotaxis control vector.
+To test the effectiveness of the CPSL DRL algorithm, a three agent version of the Fluxotaxis algorithm was implemented. The algorithm is based on the Large Swarm Implementation version (see Section 9.4.5 in Physicomimetics book by Spears). The algorithm is broken down into two major steps: computation of the formation control vector, and the computation of the Fluxotaxis control vector. In an attempt to enforce the priority of the swarm formation, a gain of 10 was put on the formation unit control vector and a gain of 1 was used with the Fluxotaxis unit control vector. 
 
 ## Formation control vector
 To control the formation of the agents and provide a way for seamless obstacle avoidance, a generalized version of the Lennard-Jones potential is used to generate a formation control vector,
@@ -217,3 +217,6 @@ The update rule for the fluxotaxis algorithm becomes,
 $$\frac{dv_i}{dt} = n_F+n_{ij},$$
 
 When no flux is detected, other strategies can be deferred to. The secondary source seeking strategies we consider are: chemotaxis, anemotaxis, and casting. In this example, chemotaxis is chosen to help keep the agents near the plume.
+## References
+- Spears, William M., and Diana F. Spears, eds. Physicomimetics: Physics-based swarm intelligence. Springer Science & Business Media, 2012.
+- Hollenbeck, Derek, et al. "Swarm Robotic Source Seeking with Fractional Fluxotaxis." 2023 International Conference on Fractional Differentiation and Its Applications (ICFDA). IEEE, 2023.
