@@ -211,7 +211,7 @@ where hyperparameters are chosen for simplicity to be the same as those found in
 ## Fluxotaxis control vector
 The decentralized scheme involves calculating the $i$-th agent's relative flux between the $j$-th neighboring agents given by Spears et. al., that is, 
 $$GDMF_i \approx F_{ij} = \rho_j |V_j|\cos{\theta_r}=\rho_j\frac{r_{ij}}{|r_{ij}|} \cdot V_j.$$
-The angle between $V_j$ and separation vector, $r_{ij}$, is given by $\theta_r$. The resulting control vector for the Fluxotaxis algorithm is then given as $F^*_{ij}$, which depends on whether the set of GDMF vectors contain a negative value or positive value. If the value is negative, the control vector is set to be the arg min of the set. If the there are no negative GDMF values, then the control vector is set to be the arg max, where $v_i$ is the velocity vector control of the $i$-th agent, and $n_{ij}=r_{ij}/|r_{ij}|$ points in the direction of $F^*_{ij}$. If no agents are around or no agent detects a concentration, $n_{ij} \rightarrow 0$. 
+The angle between $V_j$ and separation vector, $r_{ij}$, is given by $\theta_r$. The resulting control vector for the Fluxotaxis algorithm is then given as $F^n_{ij}$, which depends on whether the set of GDMF vectors contain a negative value or positive value. If the value is negative, the control vector is set to be the arg min of the set. If the there are no negative GDMF values, then the control vector is set to be the arg max, where $v_i$ is the velocity vector control of the $i$-th agent, and $n_{ij}=r_{ij}/|r_{ij}|$ points in the direction of $F^*_{ij}$. If no agents are around or no agent detects a concentration, $n_{ij} \rightarrow 0$. 
 
 The update rule for the fluxotaxis algorithm becomes, 
 $$\frac{dv_i}{dt} = n_F+n_{ij},$$
