@@ -15,13 +15,17 @@ from matplotlib.lines import Line2D
 matplotlib.use('TkAgg')
 
 # ----------------------- Input and Output Paths -----------------------
-file_path = "/home/ece213/CPSL-Sim_2/results/test_results/test_hard_60_120_2025-04-11-10-26/episodes_traj/trajectory_2174_748174349.json"
+file_path = "/home/ece213/CPSL-Sim/results/test_results/test_hard_60_120_2025-04-11-10-26/episodes_traj/trajectory_2174_748174349.json"
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-plot_save_path = f"/home/ece213/CPSL-Sim_2/results/plots"
+plot_save_path = f"/home/ece213/CPSL-Sim/results/plots"
 os.makedirs(plot_save_path, exist_ok=True)
-mat_data = scipy.io.loadmat("/home/ece213/CPSL-Sim_2/plume_data/G=5_60_120/Plume-C-Data-Height-5.mat")
 
+#Plume data used as background.
+mat_data = scipy.io.loadmat("/home/ece213/CPSL-Sim/plume_data/G=5_60_120/Plume-C-Data-Height-5.mat")
+
+#Change this for title.
 env_setup = r"Wind Condition: $\mathbf{Medium\ meander}$ | Emitter Location: [$\mathbf{60,120}$]"
+
 tolerance_distance = 4  # meters
 
 # -------------------- Helper Function --------------------

@@ -84,7 +84,7 @@ Follow the steps below to set up the environment, generate data, train models, a
 
 ### 1. Create and Activate a Virtual Environment
 
-Install required packages using either `pip` or `conda`:
+Install required packages using `pip`:
 
 #### Using [`requirements.txt`](./requirements.txt) (pip):
 ```bash
@@ -93,11 +93,6 @@ source CPSL_nv/bin/activate
 pip install -r requirements.txt
 ```
 
-#### Using [`cuas_env-package-list.txt`](./cuas_env-package-list.txt) (conda):
-```bash
-conda create --name CPSL_env --file cuas_env-package-list.txt
-conda activate CPSL_env
-```
 
 ### 2.Generate Plume Data
 Follow the instructions provided in the [Data Generation](#data-generation) section above.
@@ -152,7 +147,7 @@ python run_experiment_v1.py test --checkpoint <path_to_checkpoint> --max_num_epi
 
 #### Full example:
 ```bash
-python run_experiment_v1.py test --checkpoint /home/ece213/CPSL-Sim_2/results/ppo/CPSL_2025-04-10-02-30/debug/MyTrainer_CPSL_0v0o5_095d4_00000_0_observation_type=local,custom_model=DeepsetModel_2025-04-10_02-30-19/checkpoint_000250/checkpoint-250 --max_num_episodes 100
+python run_experiment_v1.py test --checkpoint /home/ece213/CPSL-Sim/results/ppo/CPSL_2025-04-10-02-30/debug/MyTrainer_CPSL_0v0o5_095d4_00000_0_observation_type=local,custom_model=DeepsetModel_2025-04-10_02-30-19/checkpoint_000250/checkpoint-250 --max_num_episodes 100
 
 ```
 > Make sure to use the most recent checkpoint file when testing.
@@ -163,12 +158,18 @@ To test with a different setup, you must manually override this configuration (s
 
 
 ### 7.Visualize Training and Testing Results
-#### For training visualization:
-Run [`plot_training.py`](./plot/plot_training.py)
+#### For training progress visualization:
+Run [`plot_training.py`](plot/plot_paper/plot_training.py)
 #### For testing/demo visualization:
 Run [`plot_demo.py`](./plot/plot_demo.py)
 
 These scripts will generate plots for performance tracking, qualitative analysis or animation of selected test episode.
+
+## Notes
+
+- A pre-trained checkpoint is available and ready to use at: `results/ppo/CPSL_2025-04-10-02-30/`.
+- Some scripts provide an option to either **`save`** or **`show`** the output. Be sure to choose the appropriate mode depending on whether you want to visualize the result or save it to a file.
+- **Important:** Make sure to update any file paths in the scripts to match the actual paths on your system.
 
 --- 
 # Ray Problem Fix
@@ -178,7 +179,7 @@ Issue with ray 1.13 and PyTorch 1.13:
 https://github.com/ray-project/ray/issues/26781
 https://github.com/ray-project/ray/issues/26557
 
-change line 765 in torch_policy.py located at: `<your anaconda3 path>/envs/py3915/lib/python3.9/site-packages/ray/rllib/policy/torch_policy.py`
+change line 765 in torch_policy.py located at: `<your venv path>/envs/py3915/lib/python3.9/site-packages/ray/rllib/policy/torch_policy.py`
 
 
 ```python 

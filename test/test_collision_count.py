@@ -1,6 +1,7 @@
 import json
 import os
 
+# Change it to your local path
 collision_data_path = "/home/ece213/CPSL-Sim_2/results/test_results/test_hard_60_120_2025-04-10-19-18"
 
 # Load the JSON data from a file

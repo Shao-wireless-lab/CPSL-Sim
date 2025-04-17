@@ -340,7 +340,7 @@ def experiment(config):
 
     logger.debug("Creating agent")
     #logger.debug(f"ppo config: {ppo_config}")
-    logger.debug(f"config: {config}")
+    #logger.debug(f"config: {config}")
     # Allows updating the config for the environment for evaluation.
     if update_environment:
         ppo_config = get_agent_config(config, ppo_config)
@@ -355,8 +355,8 @@ def experiment(config):
     ppo_config["env_config"]["flux_threshold"] = 0.02
     ppo_config["env_config"]["centroid_motion_window"] = 200
     ppo_config["env_config"]["centroid_motion_threshold"] = 0.2
-    ppo_config["env_config"]["scenario_level"] = "easy_80_60"
-    ppo_config["env_config"]["agent_start_type"] = "Fluxotaxis"
+    ppo_config["env_config"]["scenario_level"] = "no_80_60"
+    ppo_config["env_config"]["agent_start_type"] = "Fluxotaxis"  # Choose from XScan, YScan or Fluxotaxis
 
     test_plume_scenario = ppo_config["env_config"]["scenario_level"]
     print(f"test_plume_scenario: {test_plume_scenario}")

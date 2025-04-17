@@ -93,8 +93,15 @@ def convert_to_serializable(obj):
         return obj
 
 
-def save_summary_to_file(summary_dict, scenario_key, filepath="/home/ece213/CPSL-Sim_2/results/test_results/eval_summary.json"):
-    os.makedirs(os.path.dirname(filepath), exist_ok=True)
+def save_summary_to_file(summary_dict, scenario_key, filepath=None):
+    # Generate a timestamped path if none provided
+    if filepath is None:
+        timestamp = datetime.now().strftime("%Y-%m-%d-%H-%M")
+        base_dir = f"./results/test_results/test_{scenario_key}_{timestamp}"
+        filepath = os.path.join(base_dir, "eval_summary.json")
+        os.makedirs(base_dir, exist_ok=True)
+    else:
+        os.makedirs(os.path.dirname(filepath), exist_ok=True)
 
     if os.path.exists(filepath):
         with open(filepath, "r") as f:
@@ -370,8 +377,8 @@ def experiment(config):
     ppo_config["env_config"]["flux_threshold"] = 0.02
     ppo_config["env_config"]["centroid_motion_window"] = 200
     ppo_config["env_config"]["centroid_motion_threshold"] = 0.2
-    ppo_config["env_config"]["scenario_level"] = "easy_80_60"
-    ppo_config["env_config"]["agent_start_type"] = "YScan"
+    ppo_config["env_config"]["scenario_level"] = "no_80_60"
+    ppo_config["env_config"]["agent_start_type"] = "YScan"  # Choose from XScan, YScan or Fluxotaxis
 
     test_plume_scenario = ppo_config["env_config"]["scenario_level"]
     print(f"test_plume_scenario: {test_plume_scenario}")

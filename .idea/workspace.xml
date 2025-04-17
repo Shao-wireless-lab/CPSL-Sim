@@ -4,16 +4,125 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c511214c-d251-4a9d-97af-05419024cc30" name="Changes" comment="Update readme file with latest demo link." />
+    <list default="true" id="ae521450-1bb2-412e-9801-ba36acabf70f" name="Changes" comment="Uncleaned files, used for backup">
+      <change afterPath="$PROJECT_DIR$/cuas/utils/root_finder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot/plot_paper/plot_training.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CPSL-Sim.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CPSL-Sim.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/QControllerClass.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/QControllerClass.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/environmentClass.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/environmentClass.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/filamentClass.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/filamentClass.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/flowfieldClass.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/flowfieldClass.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/plannerClass.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/plannerClass.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/sensorClass.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/sensorClass.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/terrainClass.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/terrainClass.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/vehicleClass.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/vehicleClass.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/emgr.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/emgr.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/fminsearchbnd.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/fminsearchbnd.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/idw.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/idw.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/kalmanf.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/kalmanf.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/kriging.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/kriging.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/lambertfunctiontest.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/lambertfunctiontest.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/ll2utm.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/ll2utm.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/localization_lambertW.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/localization_lambertW.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/obserbabilityGramianTest.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/obserbabilityGramianTest.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/phaseportrait.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/phaseportrait.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/utm2ll.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/utm2ll.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/variogram.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/variogram.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/variogramfit.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/variogramfit.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/ancillaryFunctions/Lambert_W.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/ancillaryFunctions/Lambert_W.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/ancillaryFunctions/UTC2epoch.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/ancillaryFunctions/UTC2epoch.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/ancillaryFunctions/WindRose.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/ancillaryFunctions/WindRose.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/ancillaryFunctions/epoch2UTC.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/ancillaryFunctions/epoch2UTC.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/data_save.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/data_save.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/plume_scenarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/configs/plume_scenarios.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/sim_config.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/sim_config.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/sim_configv2.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuas/agents/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/agents/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuas/agents/cuas_agents.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/agents/cuas_agents.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuas/envs/cuas_env_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/envs/cuas_env_class.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuas/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuas/resources.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuas/safety_layer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/safety_layer/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuas/safety_layer/safe_action_layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/safety_layer/safe_action_layer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuas/safety_layer/safety_layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/safety_layer/safety_layer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuas/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/utils/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuas/utils/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/utils/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuas/utils/list.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/utils/list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuas/utils/replay_buffer.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/utils/replay_buffer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuas/utils/tensorboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/utils/tensorboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuas_env-package-list.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/entrypoint.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Ch5-CPSL-Behavior.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/init" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/params.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/plot_centroid&amp;anchor_allfiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot/plot_centroid&amp;anchor_allfiles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/plot_centroid&amp;anchor_html.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/plot_centroid&amp;anchor_matplotlib.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/plot_centroid_to_emitter_changing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/plot_concentration.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot/plot_concentration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/plot_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot/plot_demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/plot_final_distance_to_emitter_offset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/plot_paper/fluxotaxis_all_extended.csv" beforeDir="false" afterPath="$PROJECT_DIR$/plot/plot_paper/fluxotaxis_all_extended.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/plot_paper/noplot_distance_error.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/plot_paper/plot_distance_error.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/plot_paper/plot_fluxotaxis.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot/plot_paper/plot_fluxotaxis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/plot_paper/plot_successfull_rate.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/plot_paper/plot_trajectory.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot/plot_paper/plot_trajectory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/plot_reward.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plot/plot_training.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/__init__.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/evader.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/prot_space_blank.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/protected_space.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/pursuer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/results/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/run.ps1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_experiment_v1.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_experiment_v1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_experiment_v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_experiment_v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test123.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_checkpoint.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_checkpoint_datatype.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_collision_count.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_collision_count.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_collision_per_agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_collision_per_agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_concentration_distribution_subarea.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_concentration_distribution_subarea.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_concentration_plot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_concentration_value.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_detection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_drop_found.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_find_max_concentration.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_mat_file_import.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_mat_file_import.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_plot_combined.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_read_pkl.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_read_pkl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_sum_flux.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_sum_flux.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_trajectory_plot.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="backup" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,28 +139,125 @@
     &quot;accountId&quot;: &quot;97c9bd43-a0e7-4055-a86a-b26e0e4a4878&quot;
   }
 }</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
+  &quot;associatedIndex&quot;: 4
 }</component>
-  <component name="ProjectId" id="2vkAJgNxcx0p12CmXy5WFSvzfzk" />
+  <component name="ProjectId" id="2rGS3uLunYQqBCARjk33Yx4icRT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ece213/CPSL-Sim&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.cuas_env_class.executor": "Run",
+    "Python.noplot_distance_error.executor": "Run",
+    "Python.plot_centroid&anchor.executor": "Run",
+    "Python.plot_centroid&anchor_allfiles.executor": "Run",
+    "Python.plot_centroid&anchor_htlm.executor": "Run",
+    "Python.plot_centroid&anchor_matplotlib.executor": "Run",
+    "Python.plot_centroid_to_emitter_changing.executor": "Run",
+    "Python.plot_combined.executor": "Run",
+    "Python.plot_concentration.executor": "Run",
+    "Python.plot_demo.executor": "Run",
+    "Python.plot_demo_gui.executor": "Run",
+    "Python.plot_distance_error.executor": "Run",
+    "Python.plot_distance_to_emitter_offset_all_files.executor": "Run",
+    "Python.plot_final_distance_to_emitter_offset.executor": "Run",
+    "Python.plot_fluxotaxis.executor": "Run",
+    "Python.plot_reward.executor": "Run",
+    "Python.plot_successful_rate.executor": "Run",
+    "Python.plot_successfull_rate.executor": "Run",
+    "Python.plot_training.executor": "Run",
+    "Python.plot_trajectory.executor": "Run",
+    "Python.python run_experiment_v1.py train --duration 15000.executor": "Run",
+    "Python.run_exp_test.executor": "Run",
+    "Python.run_experiment.executor": "Run",
+    "Python.run_experiment_v1.executor": "Run",
+    "Python.run_experimrnt_test.executor": "Run",
+    "Python.test123.executor": "Run",
+    "Python.test_agent_move.executor": "Run",
+    "Python.test_centroid&anchor_loc.executor": "Run",
+    "Python.test_centroid_loc.executor": "Run",
+    "Python.test_checkpoint.executor": "Run",
+    "Python.test_collision_count.executor": "Run",
+    "Python.test_collision_per_agent.executor": "Run",
+    "Python.test_concentration_distribution.executor": "Run",
+    "Python.test_concentration_distribution_subarea.executor": "Run",
+    "Python.test_concentration_plot.executor": "Run",
+    "Python.test_concentration_value.executor": "Run",
+    "Python.test_detection.executor": "Run",
+    "Python.test_drop_found.executor": "Run",
+    "Python.test_find_max_concentration.executor": "Run",
+    "Python.test_gpu.executor": "Run",
+    "Python.test_mat_file_import.executor": "Run",
+    "Python.test_pkl_datatype.executor": "Run",
+    "Python.test_plot_combined.executor": "Run",
+    "Python.test_read_pkl.executor": "Run",
+    "Python.test_sum_flux.executor": "Run",
+    "Python.test_trajectory_plot.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/storage/CPSL-Sim_2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "two.files.diff.last.used.file": "/home/ece213/CPSL-Sim/plot/plot_paper/noplot_distance_error.py",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/plot/plot_paper" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/plot/results" />
+      <recent name="$PROJECT_DIR$/cuas/envs" />
+      <recent name="$PROJECT_DIR$/plot" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/plot/plot_paper" />
+      <recent name="$PROJECT_DIR$/cuas/utils" />
+      <recent name="$PROJECT_DIR$/plot" />
+      <recent name="$PROJECT_DIR$/plot/" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="python run_experiment_v1.py train --duration 15000" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="CPSL-Sim" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="run_experiment_v1.py" />
+      <option name="PARAMETERS" value="train --duration 15000" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.python run_experiment_v1.py train --duration 15000" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -63,130 +269,192 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c511214c-d251-4a9d-97af-05419024cc30" name="Changes" comment="" />
-      <created>1744678627413</created>
+      <changelist id="ae521450-1bb2-412e-9801-ba36acabf70f" name="Changes" comment="" />
+      <created>1736183723007</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1744678627413</updated>
-      <workItem from="1744678628472" duration="162000" />
-      <workItem from="1744678795238" duration="4000" />
-      <workItem from="1744678824825" duration="41000" />
-      <workItem from="1744678899882" duration="409000" />
-      <workItem from="1744679346485" duration="24000" />
-      <workItem from="1744679388316" duration="16000" />
-      <workItem from="1744679420540" duration="6000" />
-      <workItem from="1744679437777" duration="19000" />
-      <workItem from="1744680252512" duration="9000" />
-      <workItem from="1744680334505" duration="126000" />
-      <workItem from="1744833545734" duration="618000" />
-      <workItem from="1744847521186" duration="1597000" />
-      <workItem from="1744849124373" duration="136000" />
-      <workItem from="1744861076910" duration="227000" />
-      <workItem from="1744861333364" duration="217000" />
-      <workItem from="1744861600923" duration="334000" />
-      <workItem from="1744861966810" duration="14000" />
+      <updated>1736183723007</updated>
+      <workItem from="1736183724112" duration="4184000" />
+      <workItem from="1736799357950" duration="3608000" />
+      <workItem from="1736884991492" duration="1196000" />
+      <workItem from="1736897745290" duration="2749000" />
+      <workItem from="1737060446302" duration="5326000" />
+      <workItem from="1737154375378" duration="18859000" />
+      <workItem from="1738003015088" duration="3342000" />
+      <workItem from="1738028714842" duration="883000" />
+      <workItem from="1738030037115" duration="3381000" />
+      <workItem from="1738188793678" duration="6241000" />
+      <workItem from="1738788579228" duration="10513000" />
+      <workItem from="1739232205269" duration="14007000" />
+      <workItem from="1739902755081" duration="8038000" />
+      <workItem from="1740088525458" duration="311000" />
+      <workItem from="1740094752758" duration="70000" />
+      <workItem from="1740163495274" duration="17087000" />
+      <workItem from="1740428165085" duration="13003000" />
+      <workItem from="1740446905937" duration="1669000" />
+      <workItem from="1740448726615" duration="636000" />
+      <workItem from="1740505626525" duration="11798000" />
+      <workItem from="1740600203981" duration="6164000" />
+      <workItem from="1740684559636" duration="1239000" />
+      <workItem from="1740687012405" duration="3304000" />
+      <workItem from="1740962340472" duration="2404000" />
+      <workItem from="1740964771198" duration="45000" />
+      <workItem from="1740964841775" duration="567000" />
+      <workItem from="1740965416664" duration="655000" />
+      <workItem from="1741020663879" duration="731000" />
+      <workItem from="1741021906114" duration="3327000" />
+      <workItem from="1741025592463" duration="2141000" />
+      <workItem from="1741111744503" duration="7647000" />
+      <workItem from="1741135878119" duration="2070000" />
+      <workItem from="1741191102385" duration="742000" />
+      <workItem from="1741192612190" duration="1463000" />
+      <workItem from="1741194081240" duration="11121000" />
+      <workItem from="1741217380129" duration="2528000" />
+      <workItem from="1741226139160" duration="4000" />
+      <workItem from="1741227333271" duration="18000" />
+      <workItem from="1741228118938" duration="516000" />
+      <workItem from="1741228875664" duration="23902000" />
+      <workItem from="1741375803151" duration="1436000" />
+      <workItem from="1741632615354" duration="15000" />
+      <workItem from="1741641737037" duration="269000" />
+      <workItem from="1742870068265" duration="349000" />
+      <workItem from="1742870592227" duration="179000" />
+      <workItem from="1742927247948" duration="74000" />
+      <workItem from="1742927326556" duration="43822000" />
+      <workItem from="1743195404793" duration="7118000" />
+      <workItem from="1743369100359" duration="14900000" />
+      <workItem from="1743442770360" duration="4585000" />
+      <workItem from="1743535339783" duration="13116000" />
+      <workItem from="1743558707241" duration="395000" />
+      <workItem from="1743614081586" duration="26199000" />
+      <workItem from="1743727271974" duration="6343000" />
+      <workItem from="1743794896360" duration="26962000" />
+      <workItem from="1743914937025" duration="16039000" />
+      <workItem from="1744018689389" duration="282000" />
+      <workItem from="1744018977149" duration="19452000" />
+      <workItem from="1744083570962" duration="43091000" />
+      <workItem from="1744268366486" duration="4381000" />
+      <workItem from="1744273777888" duration="89033000" />
+      <workItem from="1744417550443" duration="798000" />
+      <workItem from="1744418623407" duration="345000" />
+      <workItem from="1744418973287" duration="608000" />
+      <workItem from="1744419638427" duration="13000" />
+      <workItem from="1744519012409" duration="28518000" />
+      <workItem from="1744659829794" duration="1367000" />
+      <workItem from="1744668071643" duration="8438000" />
+      <workItem from="1744678611872" duration="16000" />
+      <workItem from="1744680262827" duration="5000" />
+      <workItem from="1744680327677" duration="5000" />
+      <workItem from="1744834242400" duration="8200000" />
+      <workItem from="1744847507593" duration="12000" />
+      <workItem from="1744911538169" duration="322000" />
+      <workItem from="1744913623498" duration="3302000" />
+      <workItem from="1744918232790" duration="343000" />
+      <workItem from="1744918620280" duration="56000" />
+      <workItem from="1744918683809" duration="3877000" />
     </task>
-    <task id="LOCAL-00001" summary="Readme file and plume generation function update">
+    <task id="LOCAL-00001" summary="Uncleaned files, used for backup">
       <option name="closed" value="true" />
-      <created>1744678860170</created>
+      <created>1744417409960</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1744678860170</updated>
+      <updated>1744417409960</updated>
     </task>
-    <task id="LOCAL-00002" summary="Update readme file">
-      <option name="closed" value="true" />
-      <created>1744679302993</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1744679302993</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Update readme file">
-      <option name="closed" value="true" />
-      <created>1744679367147</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1744679367147</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Update readme file">
-      <option name="closed" value="true" />
-      <created>1744679448992</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1744679448992</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Update code">
-      <option name="closed" value="true" />
-      <created>1744680377964</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1744680377964</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Update code">
-      <option name="closed" value="true" />
-      <created>1744680425213</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1744680425213</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Update plot demo code">
-      <option name="closed" value="true" />
-      <created>1744849252587</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1744849252587</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Update readme file with newest demo link">
-      <option name="closed" value="true" />
-      <created>1744861470554</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1744861470554</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Update readme file with latest demo link.">
-      <option name="closed" value="true" />
-      <created>1744861539897</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1744861539897</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Update readme file with latest demo link.">
-      <option name="closed" value="true" />
-      <created>1744861851986</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1744861851986</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Update readme file with latest demo link.">
-      <option name="closed" value="true" />
-      <created>1744861971003</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1744861971003</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Readme file and plume generation function update" />
-    <MESSAGE value="Update readme file" />
-    <MESSAGE value="Update code" />
-    <MESSAGE value="Update plot demo code" />
-    <MESSAGE value="Update readme file with newest demo link" />
-    <MESSAGE value="Update readme file with latest demo link." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update readme file with latest demo link." />
+    <MESSAGE value="Uncleaned files, used for backup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Uncleaned files, used for backup" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/cuas/utils/callbacks.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/test_agent_move.py</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CPSL_Sim$plot_training.coverage" NAME="plot_training Coverage Results" MODIFIED="1744921354871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$run_experiment.coverage" NAME="run_experiment Coverage Results" MODIFIED="1740184067904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$test_sum_flux.coverage" NAME="test_sum_flux Coverage Results" MODIFIED="1743374103423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$plot_reward.coverage" NAME="plot_reward Coverage Results" MODIFIED="1741299892646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$plot_combined.coverage" NAME="plot_combined Coverage Results" MODIFIED="1741132660892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$plot_distance_error.coverage" NAME="plot_distance_error Coverage Results" MODIFIED="1744405462840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot/plot_paper" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$test_checkpoint.coverage" NAME="test_checkpoint Coverage Results" MODIFIED="1740964368488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$test_drop_found.coverage" NAME="test_drop_found Coverage Results" MODIFIED="1741299192410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$plot_centroid_to_emitter_changing.coverage" NAME="plot_centroid_to_emitter_changing Coverage Results" MODIFIED="1744149420578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$noplot_distance_error.coverage" NAME="noplot_distance_error Coverage Results" MODIFIED="1744520414245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot/plot_paper" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$plot_demo.coverage" NAME="plot_demo Coverage Results" MODIFIED="1744843634493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$plot_centroid_anchor_matplotlib.coverage" NAME="plot_centroid&amp;anchor_matplotlib Coverage Results" MODIFIED="1743644204282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$plot_trajectory.coverage" NAME="plot_trajectory Coverage Results" MODIFIED="1744552077763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot/plot_paper" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$test_concentration_distribution.coverage" NAME="test_concentration_distribution Coverage Results" MODIFIED="1744073578033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$test_centroid_loc.coverage" NAME="test_centroid_loc Coverage Results" MODIFIED="1743555080292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$test_centroid_anchor_loc.coverage" NAME="test_centroid&amp;anchor_loc Coverage Results" MODIFIED="1743558126259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$test_concentration_distribution.coverage" NAME="test_concentration_distribution Coverage Results" MODIFIED="1740522976929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$test_find_max_concentration.coverage" NAME="test_find_max_concentration Coverage Results" MODIFIED="1740520827441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$test_collision_count.coverage" NAME="test_collision_count Coverage Results" MODIFIED="1744335208405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$cuas_env_class.coverage" NAME="cuas_env_class Coverage Results" MODIFIED="1744365048757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cuas/envs" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$test123.coverage" NAME="test123 Coverage Results" MODIFIED="1744072082671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$plot_distance_to_emitter_offset_all_files.coverage" NAME="plot_distance_to_emitter_offset_all_files Coverage Results" MODIFIED="1744386605997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$test_read_pkl.coverage" NAME="test_read_pkl Coverage Results" MODIFIED="1741026251430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$test_gpu.coverage" NAME="test_gpu Coverage Results" MODIFIED="1738030041444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$plot_final_distance_to_emitter_offset.coverage" NAME="plot_final_distance_to_emitter_offset Coverage Results" MODIFIED="1744386594417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$test_concentration_plot.coverage" NAME="test_concentration_plot Coverage Results" MODIFIED="1740519885180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$run_experiment_v1.coverage" NAME="run_experiment_v1 Coverage Results" MODIFIED="1744362767907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$run_exp_test.coverage" NAME="run_exp_test Coverage Results" MODIFIED="1740087829741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$test_pkl_datatype.coverage" NAME="test_pkl_datatype Coverage Results" MODIFIED="1741027573776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$test_mat_file_import.coverage" NAME="test_mat_file_import Coverage Results" MODIFIED="1743644500648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$test_agent_move.coverage" NAME="test_agent_move Coverage Results" MODIFIED="1743038542227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$test_plot_combined.coverage" NAME="test_plot_combined Coverage Results" MODIFIED="1740448979449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$test_concentration_plot.coverage" NAME="test_concentration_plot Coverage Results" MODIFIED="1741302626899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$plot_successful_rate.coverage" NAME="plot_successful_rate Coverage Results" MODIFIED="1744348639252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$plot_centroid_anchor.coverage" NAME="plot_centroid&amp;anchor Coverage Results" MODIFIED="1743644105584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$plot_fluxotaxis.coverage" NAME="plot_fluxotaxis Coverage Results" MODIFIED="1744527972525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot/plot_paper" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$test_concentration_value.coverage" NAME="test_concentration_value Coverage Results" MODIFIED="1744013761618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$plot_centroid_anchor_htlm.coverage" NAME="plot_centroid&amp;anchor_htlm Coverage Results" MODIFIED="1743792995560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$plot_concentration.coverage" NAME="plot_concentration Coverage Results" MODIFIED="1744316799759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$plot_distance_error.coverage" NAME="plot_distance_error Coverage Results" MODIFIED="1744922300420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot/plot_paper" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$test_concentration_distribution_subarea.coverage" NAME="test_concentration_distribution_subarea Coverage Results" MODIFIED="1744072189785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$test_collision_per_agent.coverage" NAME="test_collision_per_agent Coverage Results" MODIFIED="1743384243740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$run_experiment.coverage" NAME="run_experiment Coverage Results" MODIFIED="1741289173656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$test_agent_move.coverage" NAME="test_agent_move Coverage Results" MODIFIED="1740612977368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$plot_demo_gui.coverage" NAME="plot_demo_gui Coverage Results" MODIFIED="1744151497512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$plot_reward.coverage" NAME="plot_reward Coverage Results" MODIFIED="1740767253468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$test123.coverage" NAME="test123 Coverage Results" MODIFIED="1740684948777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$plot_final_distance_to_emitter_offset.coverage" NAME="plot_final_distance_to_emitter_offset Coverage Results" MODIFIED="1744921878340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$plot_successfull_rate.coverage" NAME="plot_successfull_rate Coverage Results" MODIFIED="1744393024109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot/plot_paper" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$plot_training.coverage" NAME="plot_training Coverage Results" MODIFIED="1744519388181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$test_mat_file_import.coverage" NAME="test_mat_file_import Coverage Results" MODIFIED="1737835912794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$python_run_experiment_v1_py_train___duration_15000.coverage" NAME="python run_experiment_v1.py train --duration 15000 Coverage Results" MODIFIED="1744921341519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$plot_demo.coverage" NAME="plot_demo Coverage Results" MODIFIED="1741137692271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$test_detection.coverage" NAME="test_detection Coverage Results" MODIFIED="1743190197079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$test_trajectory_plot.coverage" NAME="test_trajectory_plot Coverage Results" MODIFIED="1740962728654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$python_run_experiment_v1_py_train___duration_15000.coverage" NAME="python run_experiment_v1.py train --duration 15000 Coverage Results" MODIFIED="1744677532892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$test_drop_found.coverage" NAME="test_drop_found Coverage Results" MODIFIED="1741024833586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim_2$plot_centroid_anchor_allfiles.coverage" NAME="plot_centroid&amp;anchor_allfiles Coverage Results" MODIFIED="1744552617303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/plot" />
+    <SUITE FILE_PATH="coverage/CPSL_Sim$run_experimrnt_test.coverage" NAME="run_experimrnt_test Coverage Results" MODIFIED="1740087543226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

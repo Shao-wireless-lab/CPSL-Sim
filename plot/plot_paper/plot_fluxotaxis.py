@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 # Use headless backend for saving plots
 matplotlib.use('Agg')
 
+# Change it to your local path
 # -------------------- Paths --------------------
 csv_file_path = "/home/ece213/CPSL-Sim_2/plot/plot_paper/fluxotaxis_all_extended.csv"
 json_paths = [
@@ -69,7 +70,7 @@ for i, (label, color, idx, json_path) in enumerate(zip(labels, colors, example_i
     axs1[i].legend()
 
 plt.tight_layout()
-fig1.savefig("/home/ece213/CPSL-Sim_2/results/plots/trajectory.png", dpi=300)
+fig1.savefig("/home/ece213/CPSL-Sim/results/plots/trajectory.png", dpi=300)
 
 # -------------------- Figure 2: Error vs Time --------------------
 fig2, axs2 = plt.subplots(1, 3, figsize=(21, 6))
@@ -92,7 +93,7 @@ for i, (centroid_traj, label, color, idx) in enumerate(centroid_trajs):
     axs2[i].legend()
 
 plt.tight_layout()
-fig2.savefig("/home/ece213/CPSL-Sim_2/results/plots/distance_error.png", dpi=300)
+fig2.savefig("/home/ece213/CPSL-Sim/results/plots/distance_error.png", dpi=300)
 
 # -------------------- Figure 3: CDF of Location Error --------------------
 fig3, ax3 = plt.subplots(figsize=(8, 6))

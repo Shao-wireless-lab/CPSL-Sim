@@ -1,5 +1,5 @@
 import json
-
+# Change it to your local path
 # Load the JSON file
 with open("/home/ece213/CPSL-Sim_2/results/test_results/test_2025-03-30-19-13/trajectory_3199_1645364297.json", "r") as f:  # Replace with your actual file name
     data = json.load(f)

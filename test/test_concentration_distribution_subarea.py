@@ -9,9 +9,10 @@ matplotlib.use('TkAgg')
 
 timestamp = datetime.now().strftime("%Y-%m-%d-%H-%M")
 
+# Change it to your local path
 # Load .mat files
-mat_data1 = scipy.io.loadmat("/home/ece213/CPSL-Sim_2/plume_data/Plume-C-Data-Height-2_G=3.mat")
-mat_data2 = scipy.io.loadmat("/home/ece213/CPSL-Sim_2/plume_data/Plume-C-Data-Height-5_G=3.mat")
+mat_data1 = scipy.io.loadmat("/home/ece213/CPSL-Sim/plume_data/Plume-C-Data-Height-2_G=3.mat")
+mat_data2 = scipy.io.loadmat("/home/ece213/CPSL-Sim/plume_data/Plume-C-Data-Height-5_G=3.mat")
 
 C1 = mat_data1['C']
 C2 = mat_data2['C']

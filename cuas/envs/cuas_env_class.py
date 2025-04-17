@@ -51,14 +51,14 @@ import scipy.io
 import sys
 import json
 from pathlib import Path
-
-path = pathlib.Path(os.path.abspath(os.path.dirname(__file__)))
-RESOURCE_FOLDER = path.joinpath("../../resources")
+from cuas.utils.root_finder import find_root
 
 
 # === Load the pclearlume_scenarios.json and sim_config.cfg (actually JSON) for plume scenarios ===
-sim_config_path = "/home/ece213/CPSL-Sim_2/configs/sim_config.cfg"
-scenario_json_path = "/home/ece213/CPSL-Sim_2/configs/plume_scenarios.json"
+project_root = find_root()
+config_dir = project_root / "configs"
+sim_config_path = config_dir / "sim_config.cfg"
+scenario_json_path = config_dir / "plume_scenarios.json"
 
 # Load scenario level
 with open(sim_config_path, "r") as f:
@@ -97,7 +97,6 @@ fil_locs = []
 class cuas_env_class(BaseCuasEnv, MultiAgentEnv):
     def __init__(self, env_config={}):
         super().__init__()
-        self.viewer = None
         self.dd = []
         self.config = env_config
         self._parse_config()
@@ -263,7 +262,6 @@ class cuas_env_class(BaseCuasEnv, MultiAgentEnv):
 
         self.alpha = self.config.get("alpha")
         self.beta = self.config.get("beta")
-        self.render_trace = self.config.get("render_trace")
         self.use_safety_layer = self.config.get("use_safety_layer")
         self.use_safe_action = self.config.get("use_safe_action")
         self.safety_layer_type = self.config.get("safety_layer_type")
@@ -709,9 +707,6 @@ class cuas_env_class(BaseCuasEnv, MultiAgentEnv):
         self.cond2met = False
 
         self.detection = False
-
-        if self.viewer is not None:
-            self.close()
 
         self.time_elapse = 0
         self.time_t = 0
@@ -1281,6 +1276,10 @@ class cuas_env_class(BaseCuasEnv, MultiAgentEnv):
         #    self.h_max = 0
 
         return obs, rew, done, info
+
+    def close(self):
+        # Clean up resources if needed
+        pass
 
     def cond1_check(self):
         return self.cond1met, self.time_t, self.timecond1
@@ -1988,267 +1987,6 @@ class cuas_env_class(BaseCuasEnv, MultiAgentEnv):
         return obs_dict
 
     ######################################################################################################################################################################
-
-    # TODO: use pygame instead of pyglet, https://www.geeksforgeeks.org/python-display-text-to-pygame-window/
-    # https://github.com/openai/gym/blob/master/gym/envs/classic_control/continuous_mountain_car.py
-    def render(self, cond1met, cond2met, tcond1, tcond2, ttime, mode="human"):
-        # view colorcode: https://www.rapidtables.com/web/color/RGB_Color.html
-        colors = {
-            "black": (0, 0, 0),
-            "red": (1, 0, 0),
-            "orange": (1, 0.4, 0),
-            "light_orange": (1, 178 / 255, 102 / 255),
-            "yellow": (1, 1, 0),
-            "light_yellow": (1, 1, 204 / 255),
-            "green": (0, 1, 0),
-            "blue": (0, 0, 1),
-            "indigo": (0.2, 0, 1),
-            "dark_gray": (0.2, 0.2, 0.2),
-            "agent": (5 / 255, 28 / 255, 176 / 255),
-            # "evader": (240 / 255, 0, 0),
-            "plume": (240 / 255, 0, 0),
-            "white": (1, 1, 1),
-        }
-
-        self.screen_width = 800
-        self.screen_height = 600
-        x_scale = self.screen_width / self.env_width_x
-        y_scale = self.screen_height / self.env_height_y
-
-        from cuas.envs import rendering
-
-        if self.viewer is None:
-
-            target = rendering.make_circle(10 * self.target.radius * x_scale, filled=True)
-            target.set_color(*colors["green"])
-
-            target_trans = rendering.Transform(
-                translation=(
-                    self.target.x * x_scale,
-                    self.target.y * y_scale,
-                ),
-            )
-
-            target.add_attr(target_trans)
-
-            self.viewer = rendering.Viewer(self.screen_width, self.screen_height)
-            self.viewer.add_geom(target)
-
-            self.obstacle_transforms = []
-            for obs in self.obstacles:
-                obstacle = rendering.make_circle(obs.radius * x_scale, filled=True)
-                obstacle_heading = rendering.Line((0, 0), (obs.radius * x_scale, 0))
-                obstacle.set_color(*colors["black"])
-                obstacle_heading.set_color(*colors["white"])
-
-                obs_trans = rendering.Transform(
-                    translation=(
-                        obs.x * x_scale,
-                        obs.y * y_scale,
-                    )
-                )
-                obstacle.add_attr(obs_trans)
-                obstacle_heading.add_attr(obs_trans)
-                self.obstacle_transforms.append(obs_trans)
-
-                self.viewer.add_geom(obstacle)
-                self.viewer.add_geom(obstacle_heading)
-
-            # self.fillament_transforms = []
-            # num_fillaments = len(self.fillament_locations)
-            # for fil in range(num_fillaments):
-            #    fillament = rendering.make_circle(0.25 * x_scale, filled=True)
-            #    fillament.set_color(*colors["red"])
-
-            #    xx = self.fillament_locations[fil][0]
-            #    yy = self.fillament_locations[fil][1]
-
-            #    fil_trans = rendering.Transform(
-            #        translation=(
-            #            xx * x_scale,
-            #            yy * y_scale,
-            #        )
-            #    )
-            #    fillament.add_attr(fil_trans)
-            #    self.fillament_transforms.append(fil_trans)
-            #    self.viewer.add_geom(fillament)
-
-            # create agents
-            self.agent_transforms = []
-            self.all_agents = []
-            self.all_agents.extend(self.agents)
-
-            for agent in self.all_agents:
-                agent_rad = rendering.make_circle(agent.radius * x_scale, filled=False)
-                agent_heading = rendering.Line((0, 0), ((agent.radius) * x_scale, 0))
-                # add sensor
-                agent_sensor = rendering.make_circle(
-                    self.agent_observation_radius * x_scale,
-                )
-                # opacity (0 = invisible, 1 = visible)
-
-                agent_sensor.set_color(*colors["red"], 0.05)
-                # else:
-                # agent_sensor.set_color(*colors["blue"], 0.05)
-
-                # TODO: enable this section if sensor is cone shape
-                # fov_left = (
-                #     self.observation_radius * np.cos(self.observation_fov / 2),
-                #     self.observation_radius * np.sin(self.observation_fov / 2),
-                # )
-
-                # fov_right = (
-                #     self.observation_radius * np.cos(-self.observation_fov / 2),
-                #     self.observation_radius * np.sin(-self.observation_fov / 2),
-                # )
-
-                # agent_sensor = rendering.FilledPolygon(
-                #     [
-                #         (0, 0),
-                #         (fov_left[0] * x_scale, fov_left[1] * y_scale),
-                #         (fov_right[0] * x_scale, fov_right[1] * y_scale),
-                #     ]
-                # )
-                # # opacity (0 = invisible, 1 = visible)
-                # agent_sensor.set_color(*colors["red"], 0.25)
-
-                if agent.type2 == AgentType.P:
-
-                    agent_sprite = rendering.Image(
-                        fname=str(RESOURCE_FOLDER / "agent.png"),
-                        width=agent.radius * x_scale,
-                        height=agent.radius * y_scale,
-                    )
-                    agent_rad.set_color(*colors["agent"])
-                    agent_heading.set_color(*colors["agent"])
-
-                else:
-                    print('AgentType is showing =E')
-                    quit()
-
-                agent_transform = rendering.Transform(
-                    translation=(agent.x * x_scale, agent.y * y_scale),
-                    rotation=agent.theta,
-                )
-
-                self.agent_transforms.append(agent_transform)
-
-                agent_sprite.add_attr(agent_transform)
-                agent_rad.add_attr(agent_transform)
-                agent_heading.add_attr(agent_transform)
-                agent_sensor.add_attr(agent_transform)
-
-                self.viewer.add_geom(agent_sprite)
-                self.viewer.add_geom(agent_rad)
-                self.viewer.add_geom(agent_heading)
-                # TODO: evader should also have limited view of environment.
-                # if self.agent_show_observation_radius and agent.type2 == AgentType.P:
-                self.viewer.add_geom(agent_sensor)
-
-        # print("||Condition 1 Met: " + str(cond1met) + " || Condition 2 Met: " +
-        #      str(cond2met) + " Time t: " + str(ttime) + " sec. ||")
-
-        if self.anchor_conc != 0:
-            anchor_circle = rendering.make_circle((5 * self.target.radius) * x_scale)
-            anchor_circle.set_color(*colors["dark_gray"], 0.25)
-            anchor_circle_trans = rendering.Transform(
-                translation=(self.anchor_loc[0] * x_scale, self.anchor_loc[1] * y_scale))
-            anchor_circle.add_attr(anchor_circle_trans)
-            self.viewer.add_geom(anchor_circle)
-
-        if cond2met and ttime == tcond2:
-            # dc = min(np.mean(self.d_ic),self.id_dist2cent)
-            perm_circle = rendering.make_circle(
-                (self.tolerance + self.dc) * x_scale,
-            )
-            perm_circle.set_color(*colors["light_orange"], 0.25)
-
-            perm_circle_trans = rendering.Transform(
-                translation=(
-                    self.xc * x_scale,
-                    self.yc * y_scale,
-                ),
-            )
-
-            perm_circle.add_attr(perm_circle_trans)
-            self.viewer.add_geom(perm_circle)
-
-        for agent, agent_transform in zip(self.all_agents, self.agent_transforms):
-            agent_transform.set_translation(agent.x * x_scale, agent.y * y_scale)
-            agent_transform.set_rotation(agent.theta)
-
-            if cond1met and ttime == tcond1:
-                # agent_line = rendering.Line((0, 0), ((agent.radius) * x_scale, 0))
-                agent_sensor2 = rendering.make_circle(
-                    self.agent_observation_radius * x_scale,
-                )
-                # if agent.type2 == AgentType.P:
-                #    agent_line.set_color(*colors["agent"])
-                # else:
-                #    print('AgentType is showing = E')
-                #    quit()
-
-                agent_sensor2.set_color(*colors["blue"], 0.05)
-
-                # agent_transform = rendering.Transform(
-                #    translation=(agent.x * x_scale, agent.y * y_scale),
-                #    rotation=agent.theta,
-                # )
-                # agent_line.add_attr(agent_transform)
-                # self.viewer.add_geom(agent_line)
-
-                agent_sensor2.add_attr(agent_transform)
-                self.viewer.add_geom(agent_sensor2)
-
-            elif cond2met and ttime == tcond2:
-                # agent_line = rendering.Line((0, 0), ((agent.radius) * x_scale, 0))
-                agent_sensor3 = rendering.make_circle(
-                    self.agent_observation_radius * x_scale,
-                )
-                # if agent.type2 == AgentType.P:
-                #    agent_line.set_color(*colors["agent"])
-                # else:
-                #    print('AgentType is showing = E')
-                #    quit()
-
-                agent_sensor3.set_color(*colors["green"], 0.05)
-
-                # agent_transform = rendering.Transform(
-                #    translation=(agent.x * x_scale, agent.y * y_scale),
-                #    rotation=agent.theta,
-                # )
-                # agent_line.add_attr(agent_transform)
-                # self.viewer.add_geom(agent_line)
-
-                agent_sensor3.add_attr(agent_transform)
-                self.viewer.add_geom(agent_sensor3)
-
-        for obstacle, obstacle_transform in zip(
-                self.obstacles, self.obstacle_transforms
-        ):
-            obstacle_transform.set_translation(
-                obstacle.x * x_scale, obstacle.y * y_scale
-            )
-            obstacle_transform.set_rotation(obstacle.theta)
-
-        # num_fillaments = len(self.fillament_locations)
-        # for fillament, fillament_transform in zip(
-        #    range(num_fillaments), self.fillament_transforms
-        # ):
-        #   fillament_transform.set_translation(
-        #        self.fillament_locations[fillament][0] * x_scale, self.fillament_locations[fillament][1] * y_scale
-        #    )
-        # if self.time_t > 4:
-        #     print(self.fillament_locations)
-        #     quit()
-
-        return self.viewer.render(return_rgb_array=mode == "rgb_array")
-
-    def close(self):
-        if self.viewer:
-            self.viewer.close()
-        self.viewer = None
-
     def norm_obs_space(self, obs):
 
         """"""

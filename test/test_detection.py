@@ -1,7 +1,7 @@
 import json
-
+# Change it to your local path
 # Load the JSON file
-with open("/home/ece213/CPSL-Sim_2/results/test_results/test_2025-03-27-17-06/trajectory_3199.json", "r") as f:
+with open("/home/ece213/CPSL-Sim/results/test_results/test_2025-03-27-17-06/trajectory_3199.json", "r") as f:
     data = json.load(f)
 
 # To store the time steps where no_detection == 0

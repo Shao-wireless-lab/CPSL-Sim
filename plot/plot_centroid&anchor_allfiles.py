@@ -6,9 +6,9 @@ import plotly.graph_objects as go
 import os
 
 matplotlib.use('TkAgg')  # For matplotlib GUI
-
+# Change it to your local path
 # === Set the folder path ===
-root_dir = "/home/ece213/CPSL-Sim_2/results/test_results/test_hard_60_120_2025-04-11-10-26/episodes_traj/"
+root_dir = "/home/ece213/CPSL-Sim/results/test_results/test_hard_60_120_2025-04-11-10-26/episodes_traj/"
 
 # === Loop through only files with "trajectory" in the name ===
 for file in os.listdir(root_dir):

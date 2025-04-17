@@ -12,7 +12,7 @@ with open("/home/ece213/CPSL-Sim_2/configs/sim_config.cfg", "r") as f:
 baseline_value = config["env_config"]["lat_flux_threshold_5"]
 
 
-
+# Change it to your local path
 # Load the JSON file
 with open("/home/ece213/CPSL-Sim_2/results/test_results/test_2025-03-28-13-29/trajectory_764.json", "r") as f:
     data = json.load(f)

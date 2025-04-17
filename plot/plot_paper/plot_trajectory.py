@@ -19,15 +19,15 @@ marl_color_plot1 = 'blue'  # Use only blue for MARL in Plot 1
 example_indices = [0, 100, 200]
 
 json_paths = [
-    "/home/ece213/CPSL-Sim_2/results/test_results/fluxotaxis/test_easy_80_60_2025-04-11-15-08/episodes_traj/trajectory_1241_1321560341.json",
-    "/home/ece213/CPSL-Sim_2/results/test_results/fluxotaxis/test_medium_80_60_2025-04-11-15-28/episodes_traj/trajectory_1426_3964150743.json",
-    "/home/ece213/CPSL-Sim_2/results/test_results/fluxotaxis/test_hard_80_60_2025-04-11-15-48/episodes_traj/trajectory_1642_3341129303.json"
+    "/home/ece213/CPSL-Sim/results/test_results/fluxotaxis/test_easy_80_60_2025-04-11-15-08/episodes_traj/trajectory_1241_1321560341.json",
+    "/home/ece213/CPSL-Sim/results/test_results/fluxotaxis/test_medium_80_60_2025-04-11-15-28/episodes_traj/trajectory_1426_3964150743.json",
+    "/home/ece213/CPSL-Sim/results/test_results/fluxotaxis/test_hard_80_60_2025-04-11-15-48/episodes_traj/trajectory_1642_3341129303.json"
 ]
 
 case_folders = [
-    "/home/ece213/CPSL-Sim_2/results/test_results/fluxotaxis/test_easy_80_60_2025-04-11-15-08/episodes_traj",
-    "/home/ece213/CPSL-Sim_2/results/test_results/fluxotaxis/test_medium_80_60_2025-04-11-15-28/episodes_traj",
-    "/home/ece213/CPSL-Sim_2/results/test_results/fluxotaxis/test_hard_80_60_2025-04-11-15-48/episodes_traj"
+    "/home/ece213/CPSL-Sim/results/test_results/fluxotaxis/test_easy_80_60_2025-04-11-15-08/episodes_traj",
+    "/home/ece213/CPSL-Sim/results/test_results/fluxotaxis/test_medium_80_60_2025-04-11-15-28/episodes_traj",
+    "/home/ece213/CPSL-Sim/results/test_results/fluxotaxis/test_hard_80_60_2025-04-11-15-48/episodes_traj"
 ]
 
 # -------------------- Load CSV --------------------
@@ -126,9 +126,9 @@ fig1.suptitle("UAV Trajectories under Wind Conditions", fontsize=20, y=0.955)
 fig1.text(0.5, 0.475, "Distance to Emitter Over Time", ha='center', va='center', fontsize=20)
 
 # Save
-fig1.savefig("/home/ece213/CPSL-Sim_2/results/plots/test_with_fluxotaxis_trajectory_error.png", dpi=300,
+fig1.savefig("/home/ece213/CPSL-Sim/results/plots/test_with_fluxotaxis_trajectory_error.png", dpi=300,
              bbox_inches='tight')
-'''
+
 # -------------------- Combined Final Distance CDF Figure --------------------
 fig3, ax3 = plt.subplots(figsize=(8, 6))  # Single CDF plot
 
@@ -194,5 +194,5 @@ ax3.set_ylabel("Cumulative Probability")
 ax3.set_xlim(0, x_max)
 ax3.set_ylim(0, 1.01)
 plt.tight_layout()
-fig3.savefig("/home/ece213/CPSL-Sim_2/results/plots/test_with_fluxotaxis_cdf.png", dpi=300)
-'''
+fig3.savefig("/home/ece213/CPSL-Sim/results/plots/test_with_fluxotaxis_cdf.png", dpi=300)
+

@@ -7,11 +7,17 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import matplotlib
 from datetime import datetime
+from cuas.utils.root_finder import find_root
 
 matplotlib.use('TkAgg')
 
-# === Load the plume_scenarios.json and sim_config.cfg (actually JSON) for plume scenarios ===
-scenario_json_path = "/home/ece213/CPSL-Sim_2/configs/plume_scenarios.json"
+
+
+
+# === Load the pclearlume_scenarios.json and sim_config.cfg (actually JSON) for plume scenarios ===
+project_root = find_root()
+config_dir = project_root / "configs"
+scenario_json_path = config_dir / "plume_scenarios.json"
 
 # Load plume scenarios config
 with open(scenario_json_path, "r") as f:

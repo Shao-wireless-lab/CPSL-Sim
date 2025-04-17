@@ -8,9 +8,8 @@ import scipy.io
 
 
 path = pathlib.Path(os.path.abspath(os.path.dirname(__file__)))
-RESOURCE_FOLDER = path.joinpath("../../resources")
 
-
+# Change it to your local path
 wind_speed_5 = scipy.io.loadmat("/home/ece213/CPSL-Sim_2/cuas/plume_data/Plume-Wind-Data-Height-5.mat")
 Conc_5 = scipy.io.loadmat("/home/ece213/CPSL-Sim_2/cuas/plume_data/Plume-C-Data-Height-5.mat")
 

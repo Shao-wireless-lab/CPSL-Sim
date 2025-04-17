@@ -13,11 +13,6 @@ from cuas import util
 import math
 from enum import IntEnum
 
-path = pathlib.Path(os.path.abspath(os.path.dirname(__file__)))
-
-# RESOURCE_FOLDER = pathlib.Path("resources")
-RESOURCE_FOLDER = path.joinpath("../../resources")
-
 class AgentType(IntEnum):
     P = 0  # agent
     #E = 1  # evader
