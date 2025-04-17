@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c511214c-d251-4a9d-97af-05419024cc30" name="Changes" comment="Update plot demo code">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="c511214c-d251-4a9d-97af-05419024cc30" name="Changes" comment="Update readme file with latest demo link." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,6 +82,7 @@
       <workItem from="1744847521186" duration="1597000" />
       <workItem from="1744849124373" duration="136000" />
       <workItem from="1744861076910" duration="227000" />
+      <workItem from="1744861333364" duration="217000" />
     </task>
     <task id="LOCAL-00001" summary="Readme file and plume generation function update">
       <option name="closed" value="true" />
@@ -142,7 +140,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744849252587</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update readme file with newest demo link">
+      <option name="closed" value="true" />
+      <created>1744861470554</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744861470554</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update readme file with latest demo link.">
+      <option name="closed" value="true" />
+      <created>1744861539897</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1744861539897</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +167,8 @@
     <MESSAGE value="Update readme file" />
     <MESSAGE value="Update code" />
     <MESSAGE value="Update plot demo code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update plot demo code" />
+    <MESSAGE value="Update readme file with newest demo link" />
+    <MESSAGE value="Update readme file with latest demo link." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update readme file with latest demo link." />
   </component>
 </project>

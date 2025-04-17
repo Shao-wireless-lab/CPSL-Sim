@@ -1,10 +1,11 @@
 # Cooperative Sensing and Unmanned Aerial Vehicle Formation Control Optimization for Chemical Plume Source Localization (CPSL) Using Deep Reinforcement Learning
 
+### A Custom Gym Environment for Cooperative Sensing and Formation Control 
+
+---
 ## Watch Our Demo
 ### Click [this link](https://www.youtube.com/watch?v=93PKTPt_GJI) or the image below to watch the CPSL demo on YouTube:
 [![CPSL Simulation](./results/plots/demo_screenshot.png)](https://www.youtube.com/watch?v=93PKTPt_GJI)
-
-### A Custom Gym Environment for Cooperative Sensing and Formation Control 
 
 ---
 ## Data Generation
