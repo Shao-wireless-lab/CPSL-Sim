@@ -109,7 +109,11 @@ and [`run_experiment_v2.py`](./run_experiment_v2.py)). Both use the same trainin
 
 - Simulation configuration: [`sim_config.cfg`](./configs/sim_config.cfg)
 
+  Setting for training config and environment.
+
 - Plume scenario configuration: [`plume_scenarios.json`](./configs/plume_scenarios.json)
+
+  Setting for different scenarios.
 
 You can view and modify training settings by inspecting the `parse_arguments()` function in any **run_experiment.py**.
 
