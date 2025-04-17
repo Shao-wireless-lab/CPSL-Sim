@@ -143,7 +143,7 @@ To specify a custom directory for saving training results:
 
     Computes **summary statistics** across a specified number of test episodes.
 
-#### 6.Example test command:
+#### Example test command:
 
 ```bash
 python run_experiment_v1.py test --checkpoint <path_to_checkpoint> --max_num_episodes 10
@@ -161,7 +161,7 @@ In all `run_experiment` scripts, the environment is initialized using the `env_c
 To test with a different setup, you must manually override this configuration (see `lines 349–362`) in the script.
 
 
-### 7.Visualize Training and Testing Results
+### 6.Visualize Training and Testing Results
 #### For training progress visualization:
 Run [`plot_training.py`](plot/plot_paper/plot_training.py)
 #### For testing/demo visualization:
@@ -172,6 +172,7 @@ These scripts will generate plots for performance tracking, qualitative analysis
 ## Notes
 
 - A pre-trained checkpoint is available and ready to use at: `results/ppo/CPSL_2025-04-10-02-30/`.
+- Due to data size, plume data and testing results are not included. Please refer to [Data Generation](#data-generation) and [Test the model](#5test-the-model).
 - Some scripts provide an option to either **`save`** or **`show`** the output. Be sure to choose the appropriate mode depending on whether you want to visualize the result or save it to a file.
 - **Important:** Make sure to update any file paths in the **`plot scripts`** and **`plume_scenarios.json`**  to match the actual paths on your system.
 
