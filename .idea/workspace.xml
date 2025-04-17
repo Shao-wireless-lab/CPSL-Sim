@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c511214c-d251-4a9d-97af-05419024cc30" name="Changes" comment="Update readme file with latest demo link.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c511214c-d251-4a9d-97af-05419024cc30" name="Changes" comment="Update readme file with latest demo link." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,6 +84,7 @@
       <workItem from="1744861076910" duration="227000" />
       <workItem from="1744861333364" duration="217000" />
       <workItem from="1744861600923" duration="334000" />
+      <workItem from="1744861966810" duration="14000" />
     </task>
     <task id="LOCAL-00001" summary="Readme file and plume generation function update">
       <option name="closed" value="true" />
@@ -167,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744861851986</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Update readme file with latest demo link.">
+      <option name="closed" value="true" />
+      <created>1744861971003</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1744861971003</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
