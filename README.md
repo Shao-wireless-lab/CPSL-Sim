@@ -169,7 +169,7 @@ These scripts will generate plots for performance tracking, qualitative analysis
 
 - A pre-trained checkpoint is available and ready to use at: `results/ppo/CPSL_2025-04-10-02-30/`.
 - Some scripts provide an option to either **`save`** or **`show`** the output. Be sure to choose the appropriate mode depending on whether you want to visualize the result or save it to a file.
-- **Important:** Make sure to update any file paths in the scripts to match the actual paths on your system.
+- **Important:** Make sure to update any file paths in the **`plot scripts`** and **`plume_scenarios.json`**  to match the actual paths on your system.
 
 --- 
 # Ray Problem Fix
