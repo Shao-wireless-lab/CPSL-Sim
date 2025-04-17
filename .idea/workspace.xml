@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae521450-1bb2-412e-9801-ba36acabf70f" name="Changes" comment="Finalized code.">
+    <list default="true" id="ae521450-1bb2-412e-9801-ba36acabf70f" name="Changes" comment="Updated readme.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -252,7 +252,7 @@
       <workItem from="1744913623498" duration="3302000" />
       <workItem from="1744918232790" duration="343000" />
       <workItem from="1744918620280" duration="56000" />
-      <workItem from="1744918683809" duration="4989000" />
+      <workItem from="1744918683809" duration="5397000" />
     </task>
     <task id="LOCAL-00001" summary="Uncleaned files, used for backup">
       <option name="closed" value="true" />
@@ -270,7 +270,39 @@
       <option name="project" value="LOCAL" />
       <updated>1744923136214</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updated requirements and model checkpoint">
+      <option name="closed" value="true" />
+      <created>1744929385102</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744929385102</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Updated requirements and model checkpoint">
+      <option name="closed" value="true" />
+      <created>1744929428806</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744929428806</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Updated requirements and model checkpoint">
+      <option name="closed" value="true" />
+      <created>1744929514316</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744929514316</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Updated readme.">
+      <option name="closed" value="true" />
+      <created>1744929629483</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1744929629483</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,8 +321,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Uncleaned files, used for backup" />
+    <MESSAGE value="Create LICENSE" />
     <MESSAGE value="Finalized code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finalized code." />
+    <MESSAGE value="Updated requirements and model checkpoint" />
+    <MESSAGE value="Updated readme." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated readme." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
