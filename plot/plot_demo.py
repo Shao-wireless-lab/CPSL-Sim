@@ -1,4 +1,3 @@
-# --- Unchanged imports ---
 import json
 import scipy.io
 import numpy as np
@@ -16,13 +15,13 @@ from matplotlib.lines import Line2D
 matplotlib.use('TkAgg')
 
 # ----------------------- Input and Output Paths -----------------------
-file_path = "/home/ece213/CPSL-Sim_2/results/test_results/fluxotaxis/test_easy_80_60_2025-04-11-15-08/episodes_traj/trajectory_1447_1451642945.json"
+file_path = "/home/ece213/CPSL-Sim_2/results/test_results/test_hard_60_120_2025-04-11-10-26/episodes_traj/trajectory_2174_748174349.json"
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 plot_save_path = f"/home/ece213/CPSL-Sim_2/results/plots"
 os.makedirs(plot_save_path, exist_ok=True)
-mat_data = scipy.io.loadmat("/home/ece213/CPSL-Sim_2/plume_data/G=1_80_60/Plume-C-Data-Height-5.mat")
+mat_data = scipy.io.loadmat("/home/ece213/CPSL-Sim_2/plume_data/G=5_60_120/Plume-C-Data-Height-5.mat")
 
-env_setup = r"Wind Condition: $\mathbf{No\ meander}$ | Emitter Location: [$\mathbf{80,60}$]"
+env_setup = r"Wind Condition: $\mathbf{Medium\ meander}$ | Emitter Location: [$\mathbf{60,120}$]"
 tolerance_distance = 4  # meters
 
 # -------------------- Helper Function --------------------
@@ -131,24 +130,28 @@ ax.plot(*target_loc, 'go', markersize=5)
 ax.text(target_loc[0] - 2, target_loc[1], "Emitter", fontsize=10, color='green',
         verticalalignment='center', horizontalalignment='right')
 
-# UI Text
 time_text = fig.text(0.25, 0.02, "Time step: -- | Time: -- s", ha="center", fontsize=12, color="black")
 status_text = fig.text(0.75, 0.02, "Status: --", ha="center", fontsize=14, color='blue', fontweight='bold')
 emitter_found_text = fig.text(0.5, 0.7, "Emitter Found!", ha="center", fontsize=60,
                               color="darkgreen", fontweight="bold", visible=False)
 
-# Anchor points with fading alpha
 anchor_dots = [
     ax.plot([], [], 'ro', markersize=2, alpha=0.5)[0],
     ax.plot([], [], 'ro', markersize=2, alpha=0.75)[0],
     ax.plot([], [], 'ro', markersize=2, alpha=1.0)[0]
 ]
 
-# Tolerance Circle and Label
+# Main centroid circle (without offset)
 tolerance_circle = Circle((0, 0), radius=tolerance_distance, edgecolor='blue',
-                          facecolor='none', linewidth=2.5, linestyle='--', visible=False)
+                          facecolor='none', linewidth=1.0, linestyle='--', visible=False)
 ax.add_patch(tolerance_circle)
 tolerance_label = ax.text(0, 0, '', color='blue', fontsize=10, fontweight='bold', visible=False)
+
+# Offset centroid circle
+offset_circle = Circle((0, 0), radius=tolerance_distance, edgecolor='blue',
+                       facecolor='none', linewidth=2.0, linestyle='-', visible=False)
+ax.add_patch(offset_circle)
+offset_label = ax.text(0, 0, '', color='blue', fontsize=10, fontweight='bold', visible=False)
 
 # -------------------- Frame Update Function --------------------
 def update(frame):
@@ -229,19 +232,39 @@ def update(frame):
         final_info = trajectory_data[-1].get("infos", {})
         first_agent_id = next(iter(final_info))
         final_centroid = final_info[first_agent_id].get("centroid_loc", None)
+        offset_centroid = final_info[first_agent_id].get("offset_centroid_loc", None)
+
         if final_centroid:
             cx, cy = final_centroid
             tolerance_circle.center = (cx, cy)
             tolerance_circle.set_visible(True)
-            tolerance_label.set_position((cx + 6, cy + 6))
-            tolerance_label.set_text(f"Tolerance: {tolerance_distance} m")
+            tolerance_circle.set_linestyle('--')
+            tolerance_circle.set_edgecolor('blue')
+            tolerance_label.set_position((cx + 6, cy))
+            tolerance_label.set_text(f"without offset")
             tolerance_label.set_visible(True)
         else:
             tolerance_circle.set_visible(False)
             tolerance_label.set_visible(False)
+
+        if offset_centroid:
+            ox, oy = offset_centroid
+            offset_circle.center = (ox, oy)
+            offset_circle.set_visible(True)
+            offset_circle.set_linestyle('-')
+            offset_circle.set_edgecolor('blue')
+            offset_label.set_position((ox - 6, oy))
+            offset_label.set_horizontalalignment("right")  # or ha="right"
+            offset_label.set_text(f"Tolerance range: {tolerance_distance} m\nwith offset")
+            offset_label.set_visible(True)
+        else:
+            offset_circle.set_visible(False)
+            offset_label.set_visible(False)
     else:
         tolerance_circle.set_visible(False)
         tolerance_label.set_visible(False)
+        offset_circle.set_visible(False)
+        offset_label.set_visible(False)
 
     if frame < all_detected_time:
         time_text.set_text("Time step: -- | Time: -- s")
@@ -251,7 +274,8 @@ def update(frame):
         time_text.set_text(f"Time step: {adjusted_step} | Time: {real_time:.2f} s")
 
     return [conc_plot] + list(agent_bodies.values()) + list(obs_circles.values()) + \
-           list(obstacle_circles) + anchor_dots + [emitter_found_text, tolerance_circle, tolerance_label]
+           list(obstacle_circles) + anchor_dots + [emitter_found_text,
+           tolerance_circle, tolerance_label, offset_circle, offset_label]
 
 # -------------------- Animate and Save --------------------
 frames = list(range(num_timesteps)) + [num_timesteps] * 60
