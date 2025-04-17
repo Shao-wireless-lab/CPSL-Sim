@@ -5,7 +5,7 @@
 ---
 ## Watch Our Demo
 ### Click [this link](https://www.youtube.com/watch?v=93PKTPt_GJI) or the image below to watch the CPSL demo on YouTube:
-<p align="center">
+<p align="left">
   <a href="https://www.youtube.com/watch?v=93PKTPt_GJI">
     <img src="./results/plots/demo_screenshot.png" width="50%" alt="CPSL Demo Screenshot">
   </a>
