@@ -4,107 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae521450-1bb2-412e-9801-ba36acabf70f" name="Changes" comment="Uncleaned files, used for backup">
-      <change afterPath="$PROJECT_DIR$/cuas/utils/root_finder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plot/plot_paper/plot_training.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CPSL-Sim.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CPSL-Sim.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="ae521450-1bb2-412e-9801-ba36acabf70f" name="Changes" comment="Finalized code.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/QControllerClass.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/QControllerClass.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/environmentClass.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/environmentClass.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/filamentClass.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/filamentClass.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/flowfieldClass.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/flowfieldClass.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/plannerClass.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/plannerClass.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/sensorClass.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/sensorClass.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/terrainClass.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/terrainClass.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/vehicleClass.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Classes/vehicleClass.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/emgr.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/emgr.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/fminsearchbnd.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/fminsearchbnd.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/idw.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/idw.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/kalmanf.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/kalmanf.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/kriging.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/kriging.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/lambertfunctiontest.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/lambertfunctiontest.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/ll2utm.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/ll2utm.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/localization_lambertW.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/localization_lambertW.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/obserbabilityGramianTest.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/obserbabilityGramianTest.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/phaseportrait.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/phaseportrait.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/utm2ll.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/utm2ll.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/variogram.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/variogram.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/variogramfit.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/Utility/variogramfit.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/ancillaryFunctions/Lambert_W.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/ancillaryFunctions/Lambert_W.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/ancillaryFunctions/UTC2epoch.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/ancillaryFunctions/UTC2epoch.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/ancillaryFunctions/WindRose.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/ancillaryFunctions/WindRose.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/ancillaryFunctions/epoch2UTC.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/ancillaryFunctions/epoch2UTC.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Generate_Plume_Data_Files/data_save.m" beforeDir="false" afterPath="$PROJECT_DIR$/Generate_Plume_Data_Files/data_save.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/plume_scenarios.json" beforeDir="false" afterPath="$PROJECT_DIR$/configs/plume_scenarios.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/sim_config.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/configs/sim_config.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/sim_configv2.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuas/agents/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/agents/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuas/agents/cuas_agents.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/agents/cuas_agents.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuas/envs/cuas_env_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/envs/cuas_env_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuas/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuas/resources.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuas/safety_layer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/safety_layer/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuas/safety_layer/safe_action_layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/safety_layer/safe_action_layer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuas/safety_layer/safety_layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/safety_layer/safety_layer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuas/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuas/utils/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/utils/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuas/utils/list.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/utils/list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuas/utils/replay_buffer.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/utils/replay_buffer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuas/utils/tensorboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/cuas/utils/tensorboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuas_env-package-list.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/entrypoint.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/Ch5-CPSL-Behavior.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/init" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/params.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/plot_centroid&amp;anchor_allfiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot/plot_centroid&amp;anchor_allfiles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/plot_centroid&amp;anchor_html.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/plot_centroid&amp;anchor_matplotlib.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/plot_centroid_to_emitter_changing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/plot_concentration.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot/plot_concentration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/plot_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot/plot_demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/plot_final_distance_to_emitter_offset.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/plot_paper/fluxotaxis_all_extended.csv" beforeDir="false" afterPath="$PROJECT_DIR$/plot/plot_paper/fluxotaxis_all_extended.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/plot_paper/noplot_distance_error.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/plot_paper/plot_distance_error.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/plot_paper/plot_fluxotaxis.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot/plot_paper/plot_fluxotaxis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/plot_paper/plot_successfull_rate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/plot_paper/plot_trajectory.py" beforeDir="false" afterPath="$PROJECT_DIR$/plot/plot_paper/plot_trajectory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/plot_reward.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plot/plot_training.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/__init__.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/evader.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/prot_space_blank.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/protected_space.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/pursuer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/results/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/run.ps1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_experiment_v1.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_experiment_v1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_experiment_v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_experiment_v2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test123.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_checkpoint.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_checkpoint_datatype.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_collision_count.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_collision_count.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_collision_per_agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_collision_per_agent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_concentration_distribution_subarea.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_concentration_distribution_subarea.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_concentration_plot.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_concentration_value.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_detection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_drop_found.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_find_max_concentration.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_mat_file_import.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_mat_file_import.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_plot_combined.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_read_pkl.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_read_pkl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_sum_flux.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_sum_flux.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_trajectory_plot.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,69 +51,69 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.cuas_env_class.executor": "Run",
-    "Python.noplot_distance_error.executor": "Run",
-    "Python.plot_centroid&anchor.executor": "Run",
-    "Python.plot_centroid&anchor_allfiles.executor": "Run",
-    "Python.plot_centroid&anchor_htlm.executor": "Run",
-    "Python.plot_centroid&anchor_matplotlib.executor": "Run",
-    "Python.plot_centroid_to_emitter_changing.executor": "Run",
-    "Python.plot_combined.executor": "Run",
-    "Python.plot_concentration.executor": "Run",
-    "Python.plot_demo.executor": "Run",
-    "Python.plot_demo_gui.executor": "Run",
-    "Python.plot_distance_error.executor": "Run",
-    "Python.plot_distance_to_emitter_offset_all_files.executor": "Run",
-    "Python.plot_final_distance_to_emitter_offset.executor": "Run",
-    "Python.plot_fluxotaxis.executor": "Run",
-    "Python.plot_reward.executor": "Run",
-    "Python.plot_successful_rate.executor": "Run",
-    "Python.plot_successfull_rate.executor": "Run",
-    "Python.plot_training.executor": "Run",
-    "Python.plot_trajectory.executor": "Run",
-    "Python.python run_experiment_v1.py train --duration 15000.executor": "Run",
-    "Python.run_exp_test.executor": "Run",
-    "Python.run_experiment.executor": "Run",
-    "Python.run_experiment_v1.executor": "Run",
-    "Python.run_experimrnt_test.executor": "Run",
-    "Python.test123.executor": "Run",
-    "Python.test_agent_move.executor": "Run",
-    "Python.test_centroid&anchor_loc.executor": "Run",
-    "Python.test_centroid_loc.executor": "Run",
-    "Python.test_checkpoint.executor": "Run",
-    "Python.test_collision_count.executor": "Run",
-    "Python.test_collision_per_agent.executor": "Run",
-    "Python.test_concentration_distribution.executor": "Run",
-    "Python.test_concentration_distribution_subarea.executor": "Run",
-    "Python.test_concentration_plot.executor": "Run",
-    "Python.test_concentration_value.executor": "Run",
-    "Python.test_detection.executor": "Run",
-    "Python.test_drop_found.executor": "Run",
-    "Python.test_find_max_concentration.executor": "Run",
-    "Python.test_gpu.executor": "Run",
-    "Python.test_mat_file_import.executor": "Run",
-    "Python.test_pkl_datatype.executor": "Run",
-    "Python.test_plot_combined.executor": "Run",
-    "Python.test_read_pkl.executor": "Run",
-    "Python.test_sum_flux.executor": "Run",
-    "Python.test_trajectory_plot.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/storage/CPSL-Sim_2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "two.files.diff.last.used.file": "/home/ece213/CPSL-Sim/plot/plot_paper/noplot_distance_error.py",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.cuas_env_class.executor&quot;: &quot;Run&quot;,
+    &quot;Python.noplot_distance_error.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_centroid&amp;anchor.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_centroid&amp;anchor_allfiles.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_centroid&amp;anchor_htlm.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_centroid&amp;anchor_matplotlib.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_centroid_to_emitter_changing.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_combined.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_concentration.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_demo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_demo_gui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_distance_error.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_distance_to_emitter_offset_all_files.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_final_distance_to_emitter_offset.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_fluxotaxis.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_reward.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_successful_rate.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_successfull_rate.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_training.executor&quot;: &quot;Run&quot;,
+    &quot;Python.plot_trajectory.executor&quot;: &quot;Run&quot;,
+    &quot;Python.python run_experiment_v1.py train --duration 15000.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_exp_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_experiment.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_experiment_v1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_experimrnt_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test123.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_agent_move.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_centroid&amp;anchor_loc.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_centroid_loc.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_checkpoint.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_collision_count.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_collision_per_agent.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_concentration_distribution.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_concentration_distribution_subarea.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_concentration_plot.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_concentration_value.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_detection.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_drop_found.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_find_max_concentration.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_gpu.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_mat_file_import.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_pkl_datatype.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_plot_combined.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_read_pkl.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_sum_flux.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_trajectory_plot.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/storage/CPSL-Sim_2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;/home/ece213/CPSL-Sim/plot/plot_paper/noplot_distance_error.py&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/plot/plot_paper" />
@@ -351,7 +252,7 @@
       <workItem from="1744913623498" duration="3302000" />
       <workItem from="1744918232790" duration="343000" />
       <workItem from="1744918620280" duration="56000" />
-      <workItem from="1744918683809" duration="3877000" />
+      <workItem from="1744918683809" duration="4989000" />
     </task>
     <task id="LOCAL-00001" summary="Uncleaned files, used for backup">
       <option name="closed" value="true" />
@@ -361,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744417409960</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Finalized code.">
+      <option name="closed" value="true" />
+      <created>1744923136214</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744923136214</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +289,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Uncleaned files, used for backup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Uncleaned files, used for backup" />
+    <MESSAGE value="Finalized code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalized code." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
