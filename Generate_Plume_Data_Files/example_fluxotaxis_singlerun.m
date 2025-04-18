@@ -108,3 +108,5 @@ t_rateToEnd = simparams.N/t_end;
 if exist('fn','var')
     writematrix(dataout,fn)
 end
+
+%test
